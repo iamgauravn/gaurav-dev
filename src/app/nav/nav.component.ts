@@ -29,5 +29,9 @@ export class NavComponent {
     this.router.navigate(['education'])
   }
 
+  openBlogs() {
+    this.router.navigate(['blogs'])
+  }
+
 
 }
