@@ -1,0 +1,64 @@
+  /* Keep the same theme and style */
+  #projects-header {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+}
+
+h3 {
+}
+
+p {
+}
+
+.project {
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.project h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 16px;
+    color: #686968;
+    margin-bottom: 15px;
+}
+
+.project-links { 
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.icon-link {
+    color: white;
+    text-decoration: none;
+}
+
+.icon-link svg {
+    width: 25px;
+    height: 25px;
+    fill: currentColor;
+}
+
+.icon-link:hover svg {
+    fill: #ffffff;
+}
+
+#tech {
+    color: #686968;
+}

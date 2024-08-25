@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  background-color: #1b1c1c;
+}
+   
+body{
+  background-color: #1b1c1c;
+}
+
+@font-face {
+    font-family: Kanit-Regular;
+    src: url(../src/assets/fonts/kanit.ttf) format("opentype");
+  }
+
+  @font-face {
+    font-family: Kanit-Bold;
+    src: url(../src/assets/fonts/kanitbold.ttf) format("opentype");
+  }
+
+#regular {
+    font-family: 'Kanit-Regular', 'arial', sans-serif;
+}
+
+#bold {
+    font-family: 'Kanit-Bold', 'arial', sans-serif;
+}

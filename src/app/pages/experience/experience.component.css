@@ -1,0 +1,88 @@
+/* Base styles for experience section */
+.experience-container {
+    margin: 5% 10%;
+}
+
+.experience-content { 
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+ 
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.experience-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.experience-date {
+    color: #686968;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #686968;
+}
+
+.experience-item li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #686968;
+}
+   
+p {
+    font-size: 16px;
+    color: #686968;
+    margin-bottom: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .experience-container {
+        margin: 5% 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-container {
+        margin: 5% 2%;
+    }
+
+    #experience-header {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .experience-container {
+        margin: 5% 1%;
+    }
+
+    #experience-header {
+        font-size: 18px;
+    }
+
+    .experience-item h3 {
+        font-size: 18px;
+    }
+
+    .experience-item h4 {
+        font-size: 14px;
+    }
+
+    .experience-item li {
+        font-size: 14px;
+    }
+}
