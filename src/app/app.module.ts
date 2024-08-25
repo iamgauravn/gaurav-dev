@@ -7,6 +7,7 @@ import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { NavComponent } from './nav/nav.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
+import { EducationComponent } from './pages/education/education.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ExperienceComponent } from './pages/experience/experience.component';
     IndexPageComponent,
     ProjectsComponent,
     NavComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,

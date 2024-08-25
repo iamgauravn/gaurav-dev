@@ -1,0 +1,92 @@
+/* Base styles for education section */
+.education-container,
+.certification-container {
+    margin: 5% 10%;
+}
+
+.education-content,
+.certification-content {
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.education-item,
+.certification-item {
+    margin-bottom: 20px;
+}
+
+.education-item h3,
+.certification-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: white;
+    font-size: larger;
+    margin-left: 15px;
+}
+
+.education-item h4,
+.certification-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.education-date,
+.certification-date {
+    color: #686968;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.education-item p,
+.certification-item p {
+    font-size: 16px;
+    color: #686968;
+    margin-bottom: 15px;
+}
+
+#highlight {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .education-container,
+    .certification-container {
+        margin: 5% 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .education-container,
+    .certification-container {
+        margin: 5% 2%;
+    }
+}
+
+@media (max-width: 576px) {
+    .education-container,
+    .certification-container {
+        margin: 5% 1%;
+    }
+
+    .education-item h3,
+    .certification-item h4 {
+        font-size: 18px;
+    }
+
+    .education-item h4,
+    .certification-item h4 {
+        font-size: 14px;
+    }
+
+    .education-item p,
+    .certification-item p {
+        font-size: 14px;
+    }
+}

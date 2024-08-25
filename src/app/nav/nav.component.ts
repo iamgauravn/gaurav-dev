@@ -25,5 +25,9 @@ export class NavComponent {
     this.router.navigate(['experience'])
   }
 
+  openEducation() {
+    this.router.navigate(['education'])
+  }
+
 
 }
