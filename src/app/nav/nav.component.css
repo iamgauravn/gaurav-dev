@@ -54,6 +54,10 @@
     margin-right: 0;
 }
 
+.header a.active {
+    color: white; 
+}
+
 /* Responsive styles */
 @media (max-width: 1200px) {
     .description {

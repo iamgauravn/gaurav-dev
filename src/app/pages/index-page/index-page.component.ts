@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './index-page.component.html',
   styleUrl: './index-page.component.css'
 })
-export class IndexPageComponent {
+export class IndexPageComponent  {
 
   totalExperienceStartDate = new Date('2022-06-01');
  

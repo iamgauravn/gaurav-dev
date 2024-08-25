@@ -1,10 +1,9 @@
 <div class="container">
     <div class="header">
-        <a id="regular" (click)="openHome()" >home</a>
-        <a id="regular" (click)="openProjects()">projects</a>
-        <a id="regular" (click)="openExperience()">experience</a>
-        <a id="regular" (click)="openEducation()">education</a>
-        <a id="regular" (click)="openBlogs()">blogs & my works</a>
+        <a id="regular" (click)="openHome()" [ngClass]="{'active': isActive('/')}">home</a>
+        <a id="regular" (click)="openProjects()" [ngClass]="{'active': isActive('/projects')}">projects</a>
+        <a id="regular" (click)="openExperience()" [ngClass]="{'active': isActive('/experience')}">experience</a>
+        <a id="regular" (click)="openEducation()" [ngClass]="{'active': isActive('/education')}">education</a>
+        <a id="regular" (click)="openBlogs()" [ngClass]="{'active': isActive('/blogs')}">blogs & my works</a>
     </div>
-    
 </div>

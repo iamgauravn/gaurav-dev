@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nav',
@@ -8,10 +9,19 @@ import { Router } from '@angular/router';
 })
 export class NavComponent {
 
-  constructor(private router : Router) {
+  currentRoute: string = '';
 
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(event => {
+      const navigationEnd = event as NavigationEnd;
+      console.log('Current URL:', navigationEnd.urlAfterRedirects); // Debugging line
+      this.currentRoute = navigationEnd.urlAfterRedirects;
+    });
   }
-
   
   openHome() {
     this.router.navigate([''])
@@ -33,5 +43,9 @@ export class NavComponent {
     this.router.navigate(['blogs'])
   }
 
+  isActive(route: string): boolean {
+    console.log('Checking route:', route, 'Current route:', this.currentRoute); // Debugging line
+    return this.currentRoute === route;
+  }
 
 }
