@@ -23,3 +23,7 @@ body{
 #bold {
     font-family: 'Kanit-Bold', 'arial', sans-serif;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
