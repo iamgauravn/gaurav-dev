@@ -83,6 +83,10 @@ export class IndexPageComponent {
       case 6 :
         window.open("https://dribbble.com/gaurav_dev", '_blank');
         break
+
+      case 7 :
+        window.open("https://drive.google.com/file/d/1HhjgAqZ3HrBdXiCCsRQxBPr6EurMTlfD/view", '_blank');
+        break
           
     }
 
