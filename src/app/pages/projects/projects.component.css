@@ -1,67 +1,73 @@
 /* Keep the same theme and style */
-  #projects-header {
+#projects-header {
     color: white;
     font-size: 24px;
     font-weight: 600;
     margin: 20px 0;
     text-align: center;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 0 10px;
 }
 
-h3 {
-}
-
-p {
-}
-
 .project {
-    border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     color: white;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.project h3 {
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project h4 {
     font-size: 20px;
     margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+    font-family: 'Poppins', sans-serif;
 }
 
 .project p {
     font-size: 16px;
     color: #686968;
     margin-bottom: 15px;
-    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
+    font-family: 'Roboto', sans-serif;
 }
 
-.project-links { 
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.icon-link {
+.github-link,
+.live-link {
+    display: inline-block;
+    font-size: 20px;
     color: white;
-    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.3s;
 }
 
-.icon-link svg {
-    width: 25px;
-    height: 25px;
-    fill: currentColor;
+.github-link:hover,
+.live-link:hover {
+    color: #3498db;
 }
 
-.icon-link:hover svg {
-    fill: #ffffff;
+.github-link.disabled,
+.live-link.disabled {
+    color: #777;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
-#tech {
-    color: #686968;
+.github-link.disabled:hover,
+.live-link.disabled:hover {
+    color: #777;
 }
