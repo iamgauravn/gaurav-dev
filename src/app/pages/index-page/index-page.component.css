@@ -2,6 +2,12 @@
 .header {
     position: static;
     margin: 10% 10% 5% 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .header a {
@@ -140,38 +146,19 @@
     align-items: center;
     padding: 8px 16px;
     color: #fff;
-    background-color: #686968;
+    background-color: transparent;
     text-decoration: none;
     font-size: medium;
     font-weight: 500;
-    border-radius: 25px;
-    border: 2px solid transparent;
+    border-radius: 5px;
+    border: 2px solid #fff;
     transition: all 0.3s ease;
     position: relative;
 }
 
-#download-resume::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    height: 120%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    transition: all 0.3s ease;
-}
-
 #download-resume:hover {
-    background-color: #4a4a4a;
-    border-color: #4a4a4a;
-}
-
-#download-resume:hover::before {
-    width: 140%;
-    height: 140%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
 }
 
 #download-resume span {
