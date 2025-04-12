@@ -1,10 +1,11 @@
-  /* Keep the same theme and style */
+/* Keep the same theme and style */
   #projects-header {
     color: white;
     font-size: 24px;
     font-weight: 600;
     margin: 20px 0;
     text-align: center;
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
 }
 
 .projects {
@@ -30,12 +31,14 @@ p {
 .project h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
 }
 
 .project p {
     font-size: 16px;
     color: #686968;
     margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
 }
 
 .project-links { 

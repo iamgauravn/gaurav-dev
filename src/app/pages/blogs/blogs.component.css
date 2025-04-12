@@ -7,6 +7,7 @@
 .blogs-container h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
 }
 
 .intro-text {
@@ -17,6 +18,7 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
 }
 
 .blogs-grid {
@@ -53,6 +55,7 @@ h3 {
     margin: 0;
     color: #ffffff;
     text-transform: uppercase;
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
 }
 
 .blog-description {
@@ -60,6 +63,7 @@ h3 {
     color: #dddddd;
     margin-top: 10px;
     line-height: 1.4;
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
 }
 
 @media (max-width: 768px) { .blogs-grid { gap: 20px; }

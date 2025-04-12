@@ -1,7 +1,6 @@
-
 .header {
     position: static;
-    margin: 10% 10% 5% 0;
+    margin: 5% 0% 3% 0; /* Reduced top margin */
 }
 
 .header a {
@@ -20,6 +19,7 @@
     font-size: x-large;
     font-weight: 600;
     display: block;
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
 }
 
 #sub-title {
@@ -27,6 +27,7 @@
     font-size: small;
     font-weight: 600;
     display: block;
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
 }
 
 .description {
@@ -40,6 +41,7 @@
     font-size: medium;
     line-height: 1.5;
     margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
 }
 
 #icons a {
@@ -131,4 +133,3 @@
     }
 }
 
- 

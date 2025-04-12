@@ -20,6 +20,7 @@
 .certification-item h4 {
     font-size: 20px;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
 }
 
 h2 {
@@ -47,6 +48,7 @@ h2 {
     font-size: 16px;
     color: #686968;
     margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
 }
 
 #highlight {
