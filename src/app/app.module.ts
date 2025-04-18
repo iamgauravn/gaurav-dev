@@ -12,7 +12,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
     IndexPageComponent,
     ProjectsComponent,
     NavComponent,
@@ -22,7 +22,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [
     provideClientHydration()

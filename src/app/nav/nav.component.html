@@ -1,10 +1,10 @@
 <div class="container">
     <div class="header">
-        <a id="regular" (click)="openHome()" >home</a>
-        <a id="regular" (click)="openProjects()">projects</a>
-        <a id="regular" (click)="openExperience()">experience</a>
-        <a id="regular" (click)="openEducation()">education</a>
-        <a id="regular" (click)="openBlogs()">articles & blogs</a>
+        <a id="regular" (click)="openHome()" [class.active]="activeRoute === '/'">home</a>
+        <a id="regular" (click)="openProjects()" [class.active]="activeRoute === '/projects'">projects</a>
+        <a id="regular" (click)="openExperience()" [class.active]="activeRoute === '/experience'">experience</a>
+        <a id="regular" (click)="openEducation()" [class.active]="activeRoute === '/education'">education</a>
+        <a id="regular" (click)="openBlogs()" [class.active]="activeRoute === '/blogs'">articles & blogs</a>
     </div>
     
 </div>
