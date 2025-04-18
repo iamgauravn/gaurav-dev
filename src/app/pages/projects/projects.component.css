@@ -1,73 +1,25 @@
-/* Keep the same theme and style */
-#projects-header {
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    margin: 20px 0;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-h3 {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
+.project-item {
+  border: 1px solid #444;
+  padding: 20px;
+  margin: 20px;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.projects {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10px;
+.description {
+  margin-top: 10px;
 }
 
-.project {
-    padding: 20px;
-    color: white;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.project p {
-    font-size: 16px;
-    color: #686968;
-    margin-bottom: 15px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.github-link,
-.live-link {
-    display: inline-block;
-    font-size: 20px;
-    color: white;
-    margin-right: 10px;
-    transition: color 0.3s;
-}
-
-.github-link:hover,
-.live-link:hover {
-    color: #3498db;
-}
-
-.github-link.disabled,
-.live-link.disabled {
-    color: #777;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.github-link.disabled:hover,
-.live-link.disabled:hover {
-    color: #777;
+.technologies {
+  font-size: 0.8em;
+  color: #999;
+  margin-top: 5px;
 }

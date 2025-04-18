@@ -1,13 +1,14 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap');
 
 * {
-  background-color: #1b1c1c;
-  font-family: 'Roboto', sans-serif; /* Default font for body text */
+  font-family: 'Kanit-Regular', sans-serif; /* Default font for body text */
+  color: #ffffff;
 }
 
 body {
-  background-color: #1b1c1c;
+  background-color: #121212;
+  background-image: linear-gradient(to bottom, #121212, #212121);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 @font-face {
@@ -18,12 +19,4 @@ body {
 @font-face {
   font-family: Kanit-Bold;
   src: url(../src/assets/fonts/kanitbold.ttf) format("opentype");
-}
-
-#regular {
-  font-family: 'Poppins', 'arial', sans-serif; /* Updated to Poppins */
-}
-
-#bold {
-  font-family: 'Poppins', 'arial', sans-serif; /* Updated to Poppins */
 }

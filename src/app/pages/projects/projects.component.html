@@ -1,35 +1,7 @@
-<div class="container">
-    <div class="content">
-        <h2 id="projects-header">Projects I've Worked On</h2>
-
-        <h3>Industry Projects</h3>
-        <div class="projects">
-            <div class="project" *ngFor="let project of industryProjects">
-                <h4>{{ project.name }}</h4>
-                <p>{{ project.description }}</p>
-                <p><strong>Technologies:</strong> {{ project.technologies }}</p>
-                <a [href]="project.githubLink" class="github-link" [class.disabled]="!project.githubLink" target="_blank">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
-                <a [href]="project.liveLink" class="live-link" [class.disabled]="!project.liveLink" target="_blank">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-
-        <h3>Personal Projects</h3>
-        <div class="projects">
-            <div class="project" *ngFor="let project of personalProjects">
-                <h4>{{ project.name }}</h4>
-                <p>{{ project.description }}</p>
-                <p><strong>Technologies:</strong> {{ project.technologies }}</p>
-                 <a [href]="project.githubLink" class="github-link" [class.disabled]="!project.githubLink" target="_blank">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
-                <a [href]="project.liveLink" class="live-link" [class.disabled]="!project.liveLink" target="_blank">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="projects-container">
+  <div *ngFor="let project of projectData" class="project-item">
+    <h3>{{ project.name }}</h3>
+    <p class="description">{{ project.description }}</p>
+    <p class="technologies">Technologies: {{ project.technologies }}</p>
+  </div>
 </div>

@@ -1,97 +1,32 @@
 .blogs-container {
-    margin: 5% 10%;
-    text-align: center;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.blogs-container h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+.blog-post {
+  border: 1px solid #444;
+  padding: 20px;
+  margin: 20px;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.intro-text {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #cccccc;
-    line-height: 1.5;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
+.blog-post h3 {
+  margin-top: 0;
 }
 
-.blogs-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+.blog-post p {
+  margin-bottom: 0.5em;
 }
 
-.blog-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 180px;
-    margin: 0 auto;
+.blog-post a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-}
-
-#logo {
-    color: #686968;
-    text-decoration: none;
-    font-size: medium;
-}
-
-h3 {
-    font-size: 18px;
-    margin: 0;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
-}
-
-.blog-description {
-    font-size: 14px;
-    color: #dddddd;
-    margin-top: 10px;
-    line-height: 1.4;
-    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
-}
-
-@media (max-width: 768px) { .blogs-grid { gap: 20px; }
- 
-.blog-item {
-    max-width: 150px;
-}
-
-h3 {
-    font-size: 16px;
-}
-
-.blog-description {
-    font-size: 12px;
-}
-}
-
-@media (max-width: 576px) { .blogs-container { margin: 5% 2%; }
- 
-.blog-item {
-    max-width: 120px;
-}
-
-h3 {
-    font-size: 14px;
-}
-
-.blog-description {
-    font-size: 10px;
-}
+.blog-post a:hover {
+  text-decoration: underline;
 }

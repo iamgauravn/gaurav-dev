@@ -6,8 +6,23 @@ import { Component } from '@angular/core';
   styleUrl: './blogs.component.css'
 })
 export class BlogsComponent {
-
-  
+  blogPosts = [
+    {
+      title: 'My First Blog Post',
+      platform: 'Medium',
+      link: 'https://medium.com/@example/my-first-blog-post'
+    },
+    {
+      title: 'My Second Blog Post',
+      platform: 'LinkedIn',
+      link: 'https://www.linkedin.com/pulse/my-second-blog-post-example'
+    },
+    {
+      title: 'My Third Blog Post',
+      platform: 'Dev.to',
+      link: 'https://dev.to/example/my-third-blog-post'
+    }
+  ];
 
   open(position:number) {
     switch(position) {
@@ -37,5 +52,4 @@ export class BlogsComponent {
           
     }
   }
-
 }

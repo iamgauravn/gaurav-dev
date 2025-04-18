@@ -1,38 +1,9 @@
-<!-- Education Section -->
 <div class="education-container">
-    <div class="education-content">
-
-        <div class="education-item">
-            <h3>Veer Narmad South Gujarat University</h3>
-            <h4>BCA (Bachelor of Computer Applications)</h4>
-            <p class="education-date">Aug 2019 – Jul 2022 | Surat</p>
-            <p id="highlight">CGPA: 9.11</p>
-        </div>
-
-        <div class="education-item">
-            <h3>Gujarat Secondary and Higher Secondary Education Board, Gandhinagar</h3>
-            <h4>12th (Sunflower English High School)</h4>
-            <p class="education-date">Jun 2018 – Mar 2019 | Surat</p>
-            <p id="highlight">Percentile: 75.42</p>
-        </div>
-
-    </div>
-</div>
-
-<!-- Certification Section -->
-<div class="certification-container">
-    <h2>Certifications</h2>
-    <div class="certification-content">
-
-        <div class="certification-item">
-            <h4>ADCA (Advance Diploma in Computer Education)</h4>
-            <p class="certification-date">Feb 2019</p>
-        </div>
-
-        <div class="certification-item">
-            <h4>Facilitate with Academic Excellence Certificate</h4>
-            <p class="certification-date">26th January 2023</p>
-        </div>
-
-    </div>
+  <div *ngFor="let education of educationData" class="education-item">
+    <h3>{{ education.institution }}</h3>
+    <h4>{{ education.degree }}</h4>
+    <p class="duration">{{ education.duration }} | {{ education.location }}</p>
+    <p class="cgpa" *ngIf="education.cgpa">{{ education.cgpa }}</p>
+    <p class="percentage" *ngIf="education.percentage">{{ education.percentage }}</p>
+  </div>
 </div>

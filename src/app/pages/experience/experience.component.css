@@ -1,91 +1,24 @@
-/* Base styles for experience section */
 .experience-container {
-    margin: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.experience-content { 
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
-}
- 
 .experience-item {
-    margin-bottom: 20px;
+  border: 1px solid #444;
+  padding: 20px;
+  margin: 20px;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.experience-item h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+.duration {
+  font-size: 0.8em;
+  color: #999;
 }
 
-.experience-item h4 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
-}
-
-.experience-date {
-    color: #686968;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.experience-item ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: #686968;
-}
-
-.experience-item li {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #686968;
-    font-family: 'Roboto', sans-serif; /* Updated to Roboto */
-}
-   
-p {
-    font-size: 16px;
-    color: #686968;
-    margin-bottom: 15px;
-}
-
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .experience-container {
-        margin: 5% 5%;
-    }
-}
-
-@media (max-width: 768px) {
-    .experience-container {
-        margin: 5% 2%;
-    }
-
-    #experience-header {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .experience-container {
-        margin: 5% 1%;
-    }
-
-    #experience-header {
-        font-size: 18px;
-    }
-
-    .experience-item h3 {
-        font-size: 18px;
-    }
-
-    .experience-item h4 {
-        font-size: 14px;
-    }
-
-    .experience-item li {
-        font-size: 14px;
-    }
+.description {
+  margin-top: 10px;
 }
