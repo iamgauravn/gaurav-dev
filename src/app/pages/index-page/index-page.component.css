@@ -1,13 +1,11 @@
 /* Base styles */
-.header {
-    position: static;
-    margin: 10% 10% 5% 0;
-    animation: fadeIn 1s ease-in-out;
+:host {
+    background-color: #121212;
+    display: block;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.header {
+    position: static
 }
 
 .header a {
