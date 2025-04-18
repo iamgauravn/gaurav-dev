@@ -12,14 +12,21 @@ export class ExperienceComponent {
       title: 'Software Engineer',
       duration: 'Nov 2023 – Present',
       location: 'Surat',
-      description: 'I specialize in backend development, building robust .NET Web APIs, with contributions to frontend work in Angular and Android (Kotlin/Java). I manage client communications, gather requirements, mentor junior developers, and focus on API integration and performance optimization, ensuring industry-standard solutions.'
+      description: 'I primarily focus on backend development, building robust .NET Web APIs, while also contributing to frontend development with Angular and Android (Kotlin/Java). In addition to technical development, I manage daily client communications, gather requirements, and translate them into actionable tasks. I also mentor junior developers, helping them grow and navigate challenges. I specialize in API integration, optimizing application performance, and ensuring all solutions meet industry standards.'
     },
     {
       company: 'Significant Infotech Pvt Ltd',
       title: 'Junior Software Developer',
       duration: 'Sep 2022 – Nov 2023',
       location: 'Surat',
-      description: 'Designed, developed, and enhanced over 30 native apps, creating 15+ innovative and responsive apps from scratch while updating and optimizing features for more than 15 existing apps to ensure optimal performance and user satisfaction.'
+      description: 'Designed and developed over 15 innovative, intuitive, and responsive native apps from scratch. Successfully updated and enhanced features for more than 10 existing apps, ensuring optimal performance and user satisfaction.'
+    },
+    {
+      company: 'Internship Company',
+      title: 'Intern Software Developer',
+      duration: 'June 2022 – August 2022',
+      location: 'Surat',
+      description: 'During training, designed and contributed to the development of multiple innovative and responsive native apps, demonstrating a strong commitment to continuous learning and growth. Actively collaborated in updating existing apps to improve features and optimize performance under mentorship.'
     }
   ];
 }
