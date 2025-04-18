@@ -30,3 +30,7 @@
 .blog-post a:hover {
   text-decoration: underline;
 }
+
+.blog-post {
+  background-color: #333;
+}

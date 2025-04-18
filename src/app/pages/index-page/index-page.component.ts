@@ -54,7 +54,10 @@ export class IndexPageComponent {
   }
 
   get totalExperience(): string {
-    return this.getTotalExperience();
+    const now = new Date();
+    const experience = this.calculateExperience(this.totalExperienceStartDate, now);
+    const years = experience.years;
+    return `${years}+ years`;
   }
 
   open(position:number) {
@@ -85,7 +88,7 @@ export class IndexPageComponent {
         break
 
       case 7 :
-        window.open("https://drive.google.com/file/d/1HhjgAqZ3HrBdXiCCsRQxBPr6EurMTlfD/view", '_blank');
+        window.open("https://drive.google.com/drive/folders/1F3NhdjbnylDbOKUrBrxb_UNpIdwmrBnu?usp=sharing", '_blank');
         break
           
     }

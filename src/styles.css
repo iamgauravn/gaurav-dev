@@ -20,3 +20,19 @@ body {
   font-family: Kanit-Bold;
   src: url(../src/assets/fonts/kanitbold.ttf) format("opentype");
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .experience-item,
+  .education-item,
+  .project-item,
+  .blog-post {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
