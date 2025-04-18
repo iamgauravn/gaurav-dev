@@ -1,5 +1,5 @@
 <div class="projects-container">
-  <div *ngFor="let project of projectData" class="project-item">
+  <div *ngFor="let project of projectData" class="project-item" [ngClass]="{'single-line-description': project.description.indexOf('.') === project.description.length - 1 || project.description.indexOf('?') === project.description.length - 1 || project.description.indexOf('!') === project.description.length - 1}">
     <h3>{{ project.name }}</h3>
     <p class="description">{{ project.description }}</p>
     <p class="technologies">Technologies: {{ project.technologies }}</p>
