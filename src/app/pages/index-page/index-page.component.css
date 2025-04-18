@@ -28,7 +28,7 @@
 }
 
 #sub-title {
-    color: rgb(110, 110, 110);
+    color: rgb(156, 153, 153);
     font-size: small;
     font-weight: 600;
     display: block;
@@ -41,7 +41,7 @@
 }
 
 .description p {
-    color: rgb(100, 100, 100);
+    color: rgb(255, 255, 255);
     text-align: start;
     font-size: medium;
     line-height: 1.5;

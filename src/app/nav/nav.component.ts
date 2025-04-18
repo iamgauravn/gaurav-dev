@@ -14,13 +14,17 @@ export class NavComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeRoute = event.url;
-        localStorage.setItem('activeRoute', this.activeRoute);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('activeRoute', this.activeRoute);
+        }
       }
     });
   }
 
   ngOnInit(): void {
-    this.activeRoute = localStorage.getItem('activeRoute') || '';
+    if (typeof window !== 'undefined') {
+      this.activeRoute = localStorage.getItem('activeRoute') || '';
+    }
   }
 
   openHome() {
