@@ -12,6 +12,7 @@
 
 .header a:hover {
     color: white;
+    cursor: pointer;
 }
 
 #title {
