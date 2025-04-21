@@ -11,15 +11,6 @@ body {
   line-height: 1.6;
 }
 
-@font-face {
-  font-family: Kanit-Regular;
-  src: url(../src/assets/fonts/kanit.ttf) format("opentype");
-}
-
-@font-face {
-  font-family: Kanit-Bold;
-  src: url(../src/assets/fonts/kanitbold.ttf) format("opentype");
-}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
