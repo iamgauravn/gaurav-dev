@@ -22,7 +22,7 @@ export class ExperienceComponent {
       description: 'Designed and developed over 15 innovative, intuitive, and responsive native apps from scratch. Successfully updated and enhanced features for more than 10 existing apps, ensuring optimal performance and user satisfaction.'
     },
     {
-      company: 'Internship Company',
+      company: 'Significant Infotech Pvt Ltd',
       title: 'Intern Software Developer',
       duration: 'June 2022 – August 2022',
       location: 'Surat',
