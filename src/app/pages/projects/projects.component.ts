@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 export class ProjectsComponent {
   projectData = [
     {
+      name: 'TaskIntel',
+      description: 'AI-Powered Employee Activity Analytics Platform - A comprehensive full-stack analytics platform designed to track, analyze, and optimize employee productivity through AI-driven insights. Features real-time activity tracking with SignalR, AI-powered analytics using Google Gemini, comprehensive dashboard with interactive visualizations, and automated PDF reporting. Built as a weekend project exploring AI and workplace analytics.',
+      technologies: '.NET 8, ASP.NET Core, SignalR, Entity Framework, Hangfire, Microsoft Semantic Kernel, Flutter, Dart, HTML5, CSS3, JavaScript, Chart.js, SQL Server, Hive, Google Gemini API, Docker, JWT',
+      githubLink: 'https://github.com/iamgauravn/TaskIntel',
+      type: 'personal'
+    },
+    {
       name: 'ProRanked',
       description: 'EV Charger Management System (CSMS) and ChargerService, built on .NET microservices, streamline EV charging operations with robust APIs for charger management, pricing, and payment processing.',
       technologies: '.NET C#, Microservices, MSSQL, Entity Framework, Azure, Minio, Android, Angular, Redis, Docker, GithubWorkflow, Dapper, Coolify',
@@ -30,7 +37,7 @@ export class ProjectsComponent {
     },
     {
       name: 'Ai-Based-Attendance-System',
-      description: 'Face Recoginition System madew in python using tkinter and opencv whrew we can add srtuents data and train thwm to takeattence b just scanning there fce andgenrate retpot',
+      description: 'Face Recognition System made in Python using Tkinter and OpenCV where we can add students data and train them to take attendance by just scanning their face and generate report.',
       technologies: 'Python, Tkinter, OpenCV',
       githubLink: 'https://github.com/iamgauravn/Ai-Based-Attendance-System',
       type: 'personal'

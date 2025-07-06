@@ -1,60 +1,212 @@
-    <div class="container">
-    
-    <div class="content">
-        <a id="title">Gaurav Nandankar</a>
-        <p id="sub-title"> Software Development Engineer </p>
-        <div class="description">
- 
-            <p id="regular">
-                Welcome to my portfolio! I am a versatile software developer with a strong foundation in both mobile and web development. With a passion for crafting innovative solutions and delivering seamless user experiences, I specialize in leveraging modern technologies like .NET, Angular, and Android to build robust, scalable, and user-centric applications.
+<!-- Clean, Professional Portfolio Design -->
+<div class="portfolio-container">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Gaurav Nandankar</h1>
+            <p class="hero-subtitle">Software Development Engineer</p>
+            <p class="hero-description">
+                I build robust, scalable applications with modern technologies. 
+                Specializing in .NET, Angular, and Android development with {{ totalExperience }} of experience.
+                I integrate AI into business solutions to drive innovation and efficiency.
             </p>
-            <p id="regular">
-                I contribute to cutting-edge projects by utilizing my expertise in ASP.NET Web API, .NET Core, Angular, and SQL. My commitment to industry best practices ensures that I deliver high-quality software solutions that not only meet but exceed client expectations. My experience spans developing intuitive native apps, managing complex web applications, and integrating APIs to optimize performance.
-            </p>
-            <p id="regular">
-                Throughout my career, I’ve demonstrated a dedication to continuous learning and growth, whether it’s designing AI-based systems during my academic journey or enhancing features in existing applications to ensure user satisfaction.
-            </p>
-            <p id="regular">
-                Explore my work to see how I bring ideas to life through code and design.
-            </p>
-
-           <p id="regular">
-                <strong>Total Experience:</strong> {{ totalExperience }}
-            </p>
-            
-            <p id="regular">
-                Find me on
-            </p>
-            
-            <p id="icons"> 
-                <a (click)="open(1)">
-                    <i class="fab fa-linkedin fa-2x"></i>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+            <div class="social-links">
+                <a (click)="open(1)" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
                 </a>
-
-                <a (click)="open(2)">
-                    <i class="fab fa-github fa-2x"></i>
+                <a (click)="open(2)" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
                 </a>
-
-                <a (click)="open(3)">
-                    <i class="fas fa-envelope-square fa-2x"></i>
+                <a (click)="open(3)" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
                 </a>
-
-                <a (click)="open(4)">
-                    <i class="fab fa-stack-overflow fa-2x"></i>
+                <a (click)="open(4)" class="social-link" aria-label="Stack Overflow">
+                    <i class="fab fa-stack-overflow"></i>
                 </a>
-
-                <a (click)="open(5)">
-                    <i class="fab fa-dev fa-2x"></i>
-                </a>
- 
-            </p>
-
+            </div>
         </div>
- 
-        <a id="download-resume" (click)="open(7)" download>
-            <span>Download Resume</span>
-        </a>
+    </section>
 
-    </div>
-    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a versatile software developer with a strong foundation in both mobile and web development. 
+                        With a passion for crafting innovative solutions and delivering seamless user experiences, 
+                        I specialize in leveraging modern technologies like .NET, Angular, and Android to build 
+                        robust, scalable, and user-centric applications.
+                    </p>
+                    <p>
+                        I integrate AI technologies into business solutions to drive innovation, automation, and efficiency. 
+                        My expertise spans ASP.NET Web API, .NET Core, Angular, SQL, and AI/ML integration, 
+                        enabling me to deliver intelligent software solutions that transform business processes 
+                        and exceed client expectations.
+                    </p>
+                    <div class="resume-download">
+                        <a (click)="open(7)" class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div *ngFor="let exp of experienceData; let i = index" class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">{{ exp.title }}</h3>
+                            <span class="timeline-company">{{ exp.company }}</span>
+                            <span class="timeline-date">{{ exp.duration }}</span>
+                        </div>
+                        <p class="timeline-location">{{ exp.location }}</p>
+                        <p class="timeline-description">{{ exp.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div *ngFor="let edu of educationData; let i = index" class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">{{ edu.degree }}</h3>
+                            <span class="timeline-company">{{ edu.institution }}</span>
+                            <span class="timeline-date">{{ edu.duration }}</span>
+                        </div>
+                        <p class="timeline-location">{{ edu.location }}</p>
+                        <p class="timeline-cgpa" *ngIf="edu.cgpa">CGPA: {{ edu.cgpa }}</p>
+                        <p class="timeline-percentage" *ngIf="edu.percentage">{{ edu.percentage }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses & Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Courses & Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-content">
+                        <div class="certification-header">
+                            <h3 class="certification-title">Advanced Diploma in Computer Application</h3>
+                            <span class="certification-date">Feb 2019</span>
+                        </div>
+                        <p class="certification-description">Advanced Diploma in Computer Education | Computer Application Certificate</p>
+                        <div class="certification-type">
+                            <span class="certification-badge">Diploma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-content">
+                        <div class="certification-header">
+                            <h3 class="certification-title">Academic Excellence Certificate</h3>
+                            <span class="certification-date">Jan 2023</span>
+                        </div>
+                        <p class="certification-description">
+                            Awarded "Facilitate with Academic Excellence Certificate" for securing second rank in BCA final year 
+                            at Vimal Tormal Poddar BCA College. Demonstrated commitment to academic excellence, leadership, and teamwork.
+                        </p>
+                        <div class="certification-type">
+                            <span class="certification-badge">Achievement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div *ngFor="let project of projectData" class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.name }}</h3>
+                        <p class="project-description">{{ project.description }}</p>
+                        <div class="project-meta">
+                            <span class="project-type">{{ project.type }}</span>
+                            <span class="project-tech">{{ project.technologies }}</span>
+                        </div>
+                        <div class="project-links" *ngIf="project.githubLink">
+                            <a href="{{ project.githubLink }}" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                        <p class="project-note" *ngIf="project.githubNote">{{ project.githubNote }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="section">
+        <div class="container">
+            <h2 class="section-title">Articles & Blogs</h2>
+            <div class="articles-grid">
+                <div *ngFor="let article of articles" class="article-card">
+                    <div class="article-content">
+                        <h3 class="article-title">{{ article.title }}</h3>
+                        <p class="article-description">{{ article.description }}</p>
+                        <div class="article-meta">
+                            <span class="article-platform">{{ article.platform }}</span>
+                        </div>
+                        <a href="{{ article.link }}" target="_blank" class="article-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Read Article
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    I'm always interested in new opportunities and exciting projects. 
+                    Feel free to reach out if you'd like to work together or just want to say hello.
+                </p>
+                <div class="contact-links">
+                    <a (click)="open(3)" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        Send Email
+                    </a>
+                    <a (click)="open(1)" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

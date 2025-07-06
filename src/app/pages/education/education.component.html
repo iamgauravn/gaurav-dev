@@ -1,3 +1,4 @@
+<div class="section-header">Education</div>
 <div class="education-container">
   <div *ngFor="let education of educationData" class="education-item">
     <h3>{{ education.institution }}</h3>
@@ -6,7 +7,6 @@
     <p class="cgpa" *ngIf="education.cgpa">{{ education.cgpa }}</p>
     <p class="percentage" *ngIf="education.percentage">{{ education.percentage }}</p>
   </div>
-  <h2>Licenses & certifications</h2>
   <div class="education-item">
     <h3>Advance Diploma in Computer Application Certificate</h3>
     <h4>🎓 Advanced Diploma in Computer Education | Computer Application Certificate</h4>

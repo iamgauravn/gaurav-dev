@@ -1,3 +1,4 @@
+<div class="section-header">Projects</div>
 <div class="projects-container">
   <div *ngFor="let project of projectData" class="project-item" [ngClass]="{'single-line-description': project.description.indexOf('.') === project.description.length - 1 || project.description.indexOf('?') === project.description.length - 1 || project.description.indexOf('!') === project.description.length - 1}">
     <h3>{{ project.name }}</h3>

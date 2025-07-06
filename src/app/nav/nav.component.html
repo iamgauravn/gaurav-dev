@@ -1,10 +1,23 @@
-<div class="container">
-    <div class="header">
-        <a id="regular" (click)="openHome()" [class.active]="activeRoute === '/'">home</a>
-        <a id="regular" (click)="openProjects()" [class.active]="activeRoute === '/projects'">projects</a>
-        <a id="regular" (click)="openExperience()" [class.active]="activeRoute === '/experience'">experience</a>
-        <a id="regular" (click)="openEducation()" [class.active]="activeRoute === '/education'">education</a>
-        <a id="regular" (click)="openBlogs()" [class.active]="activeRoute === '/blogs'">articles & blogs</a>
+<nav class="navbar" [class.scrolled]="isScrolled" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a (click)="scrollToSection('hero')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'hero'))" [class.active]="activeSection === 'hero'" role="button" tabindex="0" aria-label="Go to home section">
+                GN
+            </a>
+        </div>
+        <div class="nav-links" [class.active]="isMobileMenuOpen">
+            <a (click)="scrollToSection('about')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'about'))" [class.active]="activeSection === 'about'" role="button" tabindex="0" aria-label="View about section">About</a>
+            <a (click)="scrollToSection('experience')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'experience'))" [class.active]="activeSection === 'experience'" role="button" tabindex="0" aria-label="View experience">Experience</a>
+            <a (click)="scrollToSection('education')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'education'))" [class.active]="activeSection === 'education'" role="button" tabindex="0" aria-label="View education">Education</a>
+            <a (click)="scrollToSection('certifications')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'certifications'))" [class.active]="activeSection === 'certifications'" role="button" tabindex="0" aria-label="View certifications">Certifications</a>
+            <a (click)="scrollToSection('projects')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'projects'))" [class.active]="activeSection === 'projects'" role="button" tabindex="0" aria-label="View projects">Projects</a>
+            <a (click)="scrollToSection('articles')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'articles'))" [class.active]="activeSection === 'articles'" role="button" tabindex="0" aria-label="View articles and blogs">Articles</a>
+            <a (click)="scrollToSection('contact')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'contact'))" [class.active]="activeSection === 'contact'" role="button" tabindex="0" aria-label="Contact">Contact</a>
+        </div>
+        <button class="nav-toggle" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
-    
-</div>
+</nav>
