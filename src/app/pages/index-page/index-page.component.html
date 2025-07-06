@@ -10,6 +10,24 @@
                 Specializing in .NET, Angular, and Android development with {{ totalExperience }} of experience.
                 I integrate AI into business solutions to drive innovation and efficiency.
             </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Apps Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">{{ totalExperience }}</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Articles Published</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+            </div>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -34,27 +52,68 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">The Story Behind the Code</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a versatile software developer with a strong foundation in both mobile and web development. 
-                        With a passion for crafting innovative solutions and delivering seamless user experiences, 
-                        I specialize in leveraging modern technologies like .NET, Angular, and Android to build 
-                        robust, scalable, and user-centric applications.
-                    </p>
-                    <p>
-                        I integrate AI technologies into business solutions to drive innovation, automation, and efficiency. 
-                        My expertise spans ASP.NET Web API, .NET Core, Angular, SQL, and AI/ML integration, 
-                        enabling me to deliver intelligent software solutions that transform business processes 
-                        and exceed client expectations.
-                    </p>
-                    <div class="resume-download">
-                        <a (click)="open(7)" class="btn btn-outline">
-                            <i class="fas fa-download"></i>
-                            Download Resume
-                        </a>
+                <div class="about-intro">
+                    <div class="about-icon">
+                        <i class="fas fa-user-astronaut"></i>
                     </div>
+                    <h3 class="about-heading">Passionate Developer, Problem Solver, Innovator</h3>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Full-Stack Developer</h4>
+                        <p>I craft robust, scalable applications using modern technologies like .NET, Angular, and Android. Every line of code is written with purpose and performance in mind.</p>
+                        <div class="about-card-details">
+                            <span class="detail-tag">.NET Core</span>
+                            <span class="detail-tag">Angular</span>
+                            <span class="detail-tag">Android</span>
+                            <span class="detail-tag">SQL Server</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI Integration Expert</h4>
+                        <p>I seamlessly integrate AI technologies into business solutions to drive innovation, automation, and efficiency. From chatbots to predictive analytics, I bring intelligence to applications.</p>
+                        <div class="about-card-details">
+                            <span class="detail-tag">Google Gemini</span>
+                            <span class="detail-tag">Semantic Kernel</span>
+                            <span class="detail-tag">OpenCV</span>
+                            <span class="detail-tag">MCP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Innovation Catalyst</h4>
+                        <p>I don't just build software—I transform business processes and exceed client expectations. Every project is an opportunity to push boundaries and create something extraordinary.</p>
+                        <div class="about-card-details">
+                            <span class="detail-tag">Microservices</span>
+                            <span class="detail-tag">Docker</span>
+                            <span class="detail-tag">Azure</span>
+                            <span class="detail-tag">SignalR</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-cta">
+                    <div class="about-cta-content">
+                        <h4>Want to See My Journey?</h4>
+                        <p>Download my resume to explore my complete professional story and achievements.</p>
+                    </div>
+                    <a (click)="open(7)" class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
                 </div>
             </div>
         </div>
@@ -63,17 +122,31 @@
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title">My Professional Journey</h2>
+            <div class="experience-intro">
+                <div class="experience-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="experience-heading">Building the Future, One Project at a Time</h3>
+                <p class="experience-text">From startups to enterprise solutions, I've had the privilege of working on diverse projects that have shaped my expertise and passion for technology.</p>
+            </div>
+            
             <div class="timeline">
                 <div *ngFor="let exp of experienceData; let i = index" class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
+                            <div class="timeline-badge">
+                                <i class="fas fa-star"></i>
+                            </div>
                             <h3 class="timeline-title">{{ exp.title }}</h3>
                             <span class="timeline-company">{{ exp.company }}</span>
                             <span class="timeline-date">{{ exp.duration }}</span>
                         </div>
-                        <p class="timeline-location">{{ exp.location }}</p>
+                        <p class="timeline-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            {{ exp.location }}
+                        </p>
                         <p class="timeline-description">{{ exp.description }}</p>
                     </div>
                 </div>
@@ -84,19 +157,43 @@
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div *ngFor="let edu of educationData; let i = index" class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">{{ edu.degree }}</h3>
-                            <span class="timeline-company">{{ edu.institution }}</span>
-                            <span class="timeline-date">{{ edu.duration }}</span>
+            <h2 class="section-title">Academic Excellence</h2>
+            <div class="education-intro">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="education-heading">Foundation of Knowledge & Achievement</h3>
+                <p class="education-text">My educational journey has been marked by academic excellence and a commitment to continuous learning, providing the strong foundation for my professional success.</p>
+            </div>
+            
+            <div class="education-grid">
+                <div *ngFor="let edu of educationData; let i = index" class="education-card">
+                    <div class="education-card-header">
+                        <div class="education-card-icon">
+                            <i class="fas fa-university"></i>
                         </div>
-                        <p class="timeline-location">{{ edu.location }}</p>
-                        <p class="timeline-cgpa" *ngIf="edu.cgpa">CGPA: {{ edu.cgpa }}</p>
-                        <p class="timeline-percentage" *ngIf="edu.percentage">{{ edu.percentage }}</p>
+                        <div class="education-card-badge">
+                            <i class="fas fa-award"></i>
+                        </div>
+                    </div>
+                    <div class="education-card-content">
+                        <h3 class="education-card-title">{{ edu.degree }}</h3>
+                        <span class="education-card-institution">{{ edu.institution }}</span>
+                        <span class="education-card-date">{{ edu.duration }}</span>
+                        <p class="education-card-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            {{ edu.location }}
+                        </p>
+                        <div class="education-card-achievements">
+                            <div class="achievement-item" *ngIf="edu.cgpa">
+                                <span class="achievement-label">CGPA</span>
+                                <span class="achievement-value">{{ edu.cgpa }}</span>
+                            </div>
+                            <div class="achievement-item" *ngIf="edu.percentage">
+                                <span class="achievement-label">Percentage</span>
+                                <span class="achievement-value">{{ edu.percentage }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,9 +203,25 @@
     <!-- Courses & Certifications Section -->
     <section id="certifications" class="section">
         <div class="container">
-            <h2 class="section-title">Courses & Certifications</h2>
+            <h2 class="section-title">Recognition & Achievements</h2>
+            <div class="certifications-intro">
+                <div class="certifications-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="certifications-heading">Validating Excellence Through Achievement</h3>
+                <p class="certifications-text">These certifications and achievements represent my commitment to continuous learning and professional development, ensuring I stay at the forefront of technology.</p>
+            </div>
+            
             <div class="certifications-grid">
                 <div class="certification-card">
+                    <div class="certification-card-header">
+                        <div class="certification-card-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certification-card-badge">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
                     <div class="certification-content">
                         <div class="certification-header">
                             <h3 class="certification-title">Advanced Diploma in Computer Application</h3>
@@ -121,6 +234,14 @@
                     </div>
                 </div>
                 <div class="certification-card">
+                    <div class="certification-card-header">
+                        <div class="certification-card-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="certification-card-badge">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                    </div>
                     <div class="certification-content">
                         <div class="certification-header">
                             <h3 class="certification-title">Academic Excellence Certificate</h3>
@@ -135,6 +256,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -142,23 +264,40 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Innovation in Action</h2>
+            <div class="projects-intro">
+                <div class="projects-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="projects-heading">Turning Ideas Into Digital Reality</h3>
+                <p class="projects-text">Each project represents a unique challenge solved with creativity, technical expertise, and a passion for delivering exceptional user experiences.</p>
+            </div>
+            
             <div class="projects-grid">
                 <div *ngFor="let project of projectData" class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="project-type-badge">
+                            <span class="project-type">{{ project.type }}</span>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">{{ project.name }}</h3>
                         <p class="project-description">{{ project.description }}</p>
                         <div class="project-meta">
-                            <span class="project-type">{{ project.type }}</span>
                             <span class="project-tech">{{ project.technologies }}</span>
                         </div>
-                        <div class="project-links" *ngIf="project.githubLink">
-                            <a href="{{ project.githubLink }}" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                View Code
-                            </a>
+                        <div class="project-actions">
+                            <div class="project-links" *ngIf="project.githubLink">
+                                <a href="{{ project.githubLink }}" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    View Code
+                                </a>
+                            </div>
+                            <p class="project-note" *ngIf="project.githubNote">{{ project.githubNote }}</p>
                         </div>
-                        <p class="project-note" *ngIf="project.githubNote">{{ project.githubNote }}</p>
                     </div>
                 </div>
             </div>
@@ -168,24 +307,41 @@
     <!-- Articles Section -->
     <section id="articles" class="section">
         <div class="container">
-            <h2 class="section-title">Articles & Blogs</h2>
+            <h2 class="section-title">Sharing Knowledge & Insights</h2>
+            <div class="articles-intro">
+                <div class="articles-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h3 class="articles-heading">Thought Leadership in Technology</h3>
+                <p class="articles-text">I believe in the power of knowledge sharing. These articles represent my insights, experiences, and contributions to the developer community.</p>
+            </div>
+            
             <div class="articles-grid">
                 <div *ngFor="let article of articles" class="article-card">
+                    <div class="article-card-header">
+                        <div class="article-card-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="article-platform-badge">
+                            <span class="article-platform">{{ article.platform }}</span>
+                        </div>
+                    </div>
                     <div class="article-content">
                         <h3 class="article-title">{{ article.title }}</h3>
                         <p class="article-description">{{ article.description }}</p>
-                        <div class="article-meta">
-                            <span class="article-platform">{{ article.platform }}</span>
+                        <div class="article-actions">
+                            <a href="{{ article.link }}" target="_blank" class="article-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Read Article
+                            </a>
                         </div>
-                        <a href="{{ article.link }}" target="_blank" class="article-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            Read Article
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="section">

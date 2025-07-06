@@ -229,9 +229,12 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
 
   get totalExperience(): string {
     const now = new Date();
-    const experience = this.calculateExperience(this.totalExperienceStartDate, now);
-    const years = experience.years;
-    return `${years}+ years`;
+    const startDate = this.totalExperienceStartDate;
+    const totalMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    const totalYears = (totalMonths / 12).toFixed(1);
+    return `${totalYears} years`;
   }
 
   open(position:number) {
