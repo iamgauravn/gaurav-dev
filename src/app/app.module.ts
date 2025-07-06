@@ -5,14 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { NavComponent } from './nav/nav.component';
-import { BackgroundAnimationComponent } from './components/background-animation/background-animation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexPageComponent,
-    NavComponent,
-    BackgroundAnimationComponent
+    NavComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { animate, stagger } from 'animejs';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-background-animation',
@@ -11,7 +11,11 @@ export class BackgroundAnimationComponent implements OnInit, AfterViewInit {
   @ViewChild('starsContainer') starsContainer!: ElementRef;
   @ViewChild('gridContainer') gridContainer!: ElementRef;
 
-  constructor() { }
+  private isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   private random(min: number, max: number): number {
     return Math.random() * (max - min) + min;
@@ -21,12 +25,16 @@ export class BackgroundAnimationComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.initParticleAnimation();
-    this.initStarField();
-    this.initGridAnimation();
+    if (this.isBrowser) {
+      this.initParticleAnimation();
+      this.initStarField();
+      this.initGridAnimation();
+    }
   }
 
   private initParticleAnimation(): void {
+    if (!this.isBrowser || !this.particlesContainer) return;
+    
     const particles = this.particlesContainer.nativeElement;
     
     // Create floating particles
@@ -53,6 +61,8 @@ export class BackgroundAnimationComponent implements OnInit, AfterViewInit {
   }
 
   private initStarField(): void {
+    if (!this.isBrowser || !this.starsContainer) return;
+    
     const stars = this.starsContainer.nativeElement;
     
     // Create stars
@@ -76,6 +86,8 @@ export class BackgroundAnimationComponent implements OnInit, AfterViewInit {
   }
 
   private initGridAnimation(): void {
+    if (!this.isBrowser || !this.gridContainer) return;
+    
     const grid = this.gridContainer.nativeElement;
     
     // Create grid lines

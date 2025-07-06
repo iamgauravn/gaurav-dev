@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, PLATFORM_ID, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { animate, stagger } from 'animejs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-index-page',
@@ -10,6 +10,7 @@ import { animate, stagger } from 'animejs';
 export class IndexPageComponent implements OnInit, AfterViewInit {
 
   totalExperienceStartDate = new Date('2022-06-01');
+  private isBrowser: boolean;
 
   experienceData = [
     {
@@ -171,58 +172,16 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
   ngOnInit(): void {
     // Component initialization
   }
 
   ngAfterViewInit(): void {
-    this.initAnimations();
-  }
-
-  private initAnimations(): void {
-    // Animate title
-    animate('#title', {
-      opacity: [0, 1],
-      translateY: [30, 0],
-      duration: 1000,
-      easing: 'easeOutCubic'
-    });
-
-    // Animate subtitle
-    animate('#sub-title', {
-      opacity: [0, 1],
-      translateY: [20, 0],
-      duration: 1000,
-      delay: 300,
-      easing: 'easeOutCubic'
-    });
-
-    // Animate description paragraphs
-    animate('.description p', {
-      opacity: [0, 1],
-      translateX: [30, 0],
-      duration: 800,
-      delay: stagger(200),
-      easing: 'easeOutCubic'
-    });
-
-    // Animate social icons
-    animate('#icons a', {
-      opacity: [0, 1],
-      scale: [0.5, 1],
-      duration: 600,
-      delay: stagger(100),
-      easing: 'easeOutBack'
-    });
-
-    // Animate download button
-    animate('#download-resume', {
-      opacity: [0, 1],
-      translateY: [20, 0],
-      duration: 800,
-      delay: 1000,
-      easing: 'easeOutCubic'
-    });
+    // Animations removed for clean design
   }
  
   getTotalExperience(): string {
