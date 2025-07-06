@@ -1,23 +1,36 @@
-<nav class="navbar" [class.scrolled]="isScrolled" role="navigation" aria-label="Main navigation">
+<nav class="navbar" [class.scrolled]="isScrolled">
     <div class="nav-container">
-        <div class="nav-brand">
-            <a (click)="scrollToSection('hero')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'hero'))" [class.active]="activeSection === 'hero'" role="button" tabindex="0" aria-label="Go to home section">
-                GN
-            </a>
-        </div>
-        <div class="nav-links" [class.active]="isMobileMenuOpen">
-            <a (click)="scrollToSection('about')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'about'))" [class.active]="activeSection === 'about'" role="button" tabindex="0" aria-label="View about section">About</a>
-            <a (click)="scrollToSection('experience')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'experience'))" [class.active]="activeSection === 'experience'" role="button" tabindex="0" aria-label="View experience">Experience</a>
-            <a (click)="scrollToSection('education')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'education'))" [class.active]="activeSection === 'education'" role="button" tabindex="0" aria-label="View education">Education</a>
-            <a (click)="scrollToSection('certifications')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'certifications'))" [class.active]="activeSection === 'certifications'" role="button" tabindex="0" aria-label="View certifications">Certifications</a>
-            <a (click)="scrollToSection('projects')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'projects'))" [class.active]="activeSection === 'projects'" role="button" tabindex="0" aria-label="View projects">Projects</a>
-            <a (click)="scrollToSection('articles')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'articles'))" [class.active]="activeSection === 'articles'" role="button" tabindex="0" aria-label="View articles and blogs">Articles</a>
-            <a (click)="scrollToSection('contact')" (keydown)="onKeyDown($event, scrollToSection.bind(this, 'contact'))" [class.active]="activeSection === 'contact'" role="button" tabindex="0" aria-label="Contact">Contact</a>
-        </div>
-        <button class="nav-toggle" [class.active]="isMobileMenuOpen" (click)="toggleMobileMenu()" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <a href="#hero" class="nav-brand" (click)="scrollToSection('hero')">GN</a>
+        
+        <ul class="nav-menu" [class.active]="isMenuOpen">
+            <li class="nav-item">
+                <a href="#hero" class="nav-link" [class.active]="activeSection === 'hero'" (click)="scrollToSection('hero')">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link" [class.active]="activeSection === 'about'" (click)="scrollToSection('about')">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#experience" class="nav-link" [class.active]="activeSection === 'experience'" (click)="scrollToSection('experience')">Experience</a>
+            </li>
+            <li class="nav-item">
+                <a href="#education" class="nav-link" [class.active]="activeSection === 'education'" (click)="scrollToSection('education')">Education</a>
+            </li>
+            <li class="nav-item">
+                <a href="#certifications" class="nav-link" [class.active]="activeSection === 'certifications'" (click)="scrollToSection('certifications')">Certifications</a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'" (click)="scrollToSection('projects')">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#articles" class="nav-link" [class.active]="activeSection === 'articles'" (click)="scrollToSection('articles')">Articles</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link" [class.active]="activeSection === 'contact'" (click)="scrollToSection('contact')">Contact</a>
+            </li>
+        </ul>
+        
+        <button class="nav-toggle" (click)="toggleMenu()" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
         </button>
     </div>
 </nav>

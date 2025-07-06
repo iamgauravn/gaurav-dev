@@ -190,21 +190,73 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Let's Build Something Amazing Together</h2>
             <div class="contact-content">
-                <p class="contact-text">
-                    I'm always interested in new opportunities and exciting projects. 
-                    Feel free to reach out if you'd like to work together or just want to say hello.
-                </p>
-                <div class="contact-links">
-                    <a (click)="open(3)" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        Send Email
-                    </a>
-                    <a (click)="open(1)" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        Connect on LinkedIn
-                    </a>
+                <div class="contact-intro">
+                    <div class="contact-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="contact-heading">Ready to Turn Ideas Into Reality?</h3>
+                    <p class="contact-text">
+                        Whether you have a groundbreaking project in mind, want to collaborate on something exciting, 
+                        or just want to chat about technology and innovation - I'm all ears! 
+                        Let's create something extraordinary together.
+                    </p>
+                </div>
+                
+                <div class="contact-options">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4>Work Together</h4>
+                        <p>Have a project that needs expert development? Let's discuss how we can bring your vision to life.</p>
+                        <a (click)="open(3)" class="contact-card-btn">
+                            <i class="fas fa-envelope"></i>
+                            Start a Conversation
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h4>Grab Coffee</h4>
+                        <p>Interested in networking or just want to chat about tech? I'm always up for interesting conversations.</p>
+                        <a (click)="open(1)" class="contact-card-btn">
+                            <i class="fab fa-linkedin"></i>
+                            Connect & Chat
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Share Ideas</h4>
+                        <p>Have an innovative idea or want to explore new technologies? Let's brainstorm together!</p>
+                        <a (click)="open(2)" class="contact-card-btn">
+                            <i class="fab fa-github"></i>
+                            Explore My Work
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <div class="cta-content">
+                        <h4>Don't Wait - Let's Connect Today!</h4>
+                        <p>Every great collaboration starts with a simple hello. What are you waiting for?</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a (click)="open(3)" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </a>
+                        <a (click)="open(1)" class="btn btn-secondary">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn Profile
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

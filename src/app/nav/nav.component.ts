@@ -1,160 +1,79 @@
-import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css'
+  styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit, OnDestroy {
+export class NavComponent implements OnInit {
+  isScrolled = false;
+  isMenuOpen = false;
+  activeSection = 'home';
 
-  activeSection: string = 'hero';
-  isMobileMenuOpen: boolean = false;
-  isScrolled: boolean = false;
-  private observer: IntersectionObserver | null = null;
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.setupScrollSpy();
-  }
-
-  ngOnDestroy(): void {
-    if (this.observer) {
-      this.observer.disconnect();
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.updateScrollStatus();
     }
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+    if (isPlatformBrowser(this.platformId)) {
+      this.updateScrollStatus();
+      this.updateActiveSection();
+    }
   }
 
-  scrollToSection(sectionId: string) {
-    this.activeSection = sectionId;
-    this.closeMobileMenu();
+  updateScrollStatus() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isScrolled = window.scrollY > 50;
+    }
+  }
+
+  updateActiveSection() {
+    if (!isPlatformBrowser(this.platformId)) return;
     
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navbarHeight = 70; // Height of fixed navbar
-      const elementPosition = element.offsetTop - navbarHeight;
-      
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    }
-  }
-
-  setupScrollSpy() {
-    if (typeof window !== 'undefined') {
-      // Use Intersection Observer for better performance
-      this.observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const sectionId = entry.target.id;
-              if (sectionId && this.activeSection !== sectionId) {
-                this.activeSection = sectionId;
-                console.log('Active section changed to:', sectionId);
-              }
-            }
-          });
-        },
-        {
-          rootMargin: '-20% 0px -70% 0px', // Adjust these values for better detection
-          threshold: 0
-        }
-      );
-
-      // Observe all sections
-      const sections = ['hero', 'about', 'experience', 'education', 'certifications', 'projects', 'articles', 'contact'];
-      sections.forEach(sectionId => {
-        const element = document.getElementById(sectionId);
-        if (element && this.observer) {
-          this.observer.observe(element);
-        }
-      });
-
-      // Fallback: also use scroll event for immediate updates
-      window.addEventListener('scroll', () => {
-        this.updateActiveSectionFallback();
-      });
-    }
-  }
-
-  updateActiveSectionFallback() {
     const sections = ['hero', 'about', 'experience', 'education', 'certifications', 'projects', 'articles', 'contact'];
     const scrollPosition = window.scrollY + 100;
 
-    let currentSection = 'hero';
-
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = sections[i];
+    for (const section of sections) {
       const element = document.getElementById(section);
-      
       if (element) {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + window.scrollY;
-        
-        if (scrollPosition >= elementTop) {
-          currentSection = section;
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          this.activeSection = section;
           break;
         }
       }
     }
-
-    if (this.activeSection !== currentSection) {
-      this.activeSection = currentSection;
-    }
   }
 
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  scrollToSection(sectionId: string) {
+    if (!isPlatformBrowser(this.platformId)) return;
     
-    // Add/remove active class to nav-toggle button
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (navToggle) {
-      navToggle.classList.toggle('active', this.isMobileMenuOpen);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-    
-    if (navLinks) {
-      navLinks.classList.toggle('active', this.isMobileMenuOpen);
-    }
+    this.isMenuOpen = false; // Close mobile menu after clicking
   }
 
-  closeMobileMenu() {
-    this.isMobileMenuOpen = false;
-    
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (navToggle) {
-      navToggle.classList.remove('active');
-    }
-    
-    if (navLinks) {
-      navLinks.classList.remove('active');
-    }
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
-  // Handle keyboard navigation
-  onKeyDown(event: KeyboardEvent, action: () => void) {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      action();
-    }
-  }
-
-  // Close mobile menu when clicking outside
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
-    const target = event.target as HTMLElement;
-    const navbar = document.querySelector('.navbar');
+    if (!isPlatformBrowser(this.platformId)) return;
     
-    if (navbar && !navbar.contains(target) && this.isMobileMenuOpen) {
-      this.closeMobileMenu();
+    const target = event.target as HTMLElement;
+    if (!target.closest('.nav-container')) {
+      this.isMenuOpen = false;
     }
   }
 }
