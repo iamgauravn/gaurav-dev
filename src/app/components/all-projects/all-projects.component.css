@@ -136,11 +136,68 @@ p {
 }
 
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .overlay-container {
+        padding-bottom: 60px;
+    }
+
+    .overlay-header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 24px;
     }
 
     .overlay-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .close-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+    }
+
+    .project-type {
+        font-size: 0.7rem;
+    }
+
+    .project-tech {
+        font-size: 0.75rem;
+        padding-top: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay-title {
+        font-size: 1.2rem;
+    }
+
+    .project-card {
+        padding: 16px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
     }
 }

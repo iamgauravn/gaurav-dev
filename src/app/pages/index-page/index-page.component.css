@@ -6,6 +6,10 @@
     background: #0a0a0a;
     min-height: 100vh;
     padding-top: 80px;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Container */
@@ -1869,29 +1873,196 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    /* Global mobile fixes */
+    * {
+        max-width: 100vw;
+    }
+
+    body {
+        overflow-x: hidden !important;
+    }
+
     .container {
-        padding: 0 20px;
+        padding: 0 16px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     .section {
-        padding: 120px 0;
+        padding: 80px 0;
+        overflow-x: hidden;
     }
 
+    /* Hero Section Mobile */
     .hero {
-        padding: 0 20px;
+        padding: 80px 16px 60px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem !important;
+        line-height: 1.6;
+        margin-bottom: 28px;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: center;
+        gap: 12px;
+        width: 100%;
     }
 
     .btn {
         width: 100%;
+        max-width: 260px;
+        justify-content: center;
+        font-size: 0.85rem;
+        padding: 12px 18px;
+    }
+
+    /* Social Links - Stack vertically on mobile */
+    .social-links {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .social-link {
+        width: 100%;
         max-width: 280px;
+        padding: 16px;
         justify-content: center;
     }
 
+    /* Section Headers */
+    .section-header h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 12px;
+    }
+
+    .section-header p {
+        font-size: 0.9rem !important;
+    }
+
+    /* Project Marquee - COMPLETELY DISABLE on mobile */
+    .project-scroll-container {
+        width: 100% !important;
+        max-width: 100%;
+        padding: 0 !important;
+        overflow: visible !important;
+        position: relative;
+    }
+
+    .marquee-row {
+        display: block !important;
+        width: 100% !important;
+        overflow: visible !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .marquee-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        width: 100% !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    /* Hide duplicate marquee cards on mobile */
+    .marquee-content>*:nth-child(n+4) {
+        display: none !important;
+    }
+
+    /* Project Slide Cards - Mobile optimized */
+    .project-slide-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 250px;
+        padding: 18px !important;
+        margin: 0 !important;
+    }
+
+    .project-slide-card h3 {
+        font-size: 1.05rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .project-slide-card p {
+        font-size: 0.82rem !important;
+        line-height: 1.5 !important;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    .tech-info {
+        font-size: 0.7rem !important;
+        max-width: 65%;
+    }
+
+    .slide-link {
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+
+    /* Article Slide Cards - Mobile optimized */
+    .article-slide-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 140px;
+        padding: 14px !important;
+        flex-direction: row !important;
+        gap: 10px;
+        margin: 0 !important;
+    }
+
+    .article-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+    }
+
+    .article-link h4 {
+        font-size: 0.95rem !important;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .article-desc {
+        font-size: 0.8rem !important;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .article-meta {
+        font-size: 0.7rem !important;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        gap: 8px !important;
+    }
+
+    .skill-tag {
+        font-size: 0.8rem !important;
+        padding: 8px 12px !important;
+    }
+
+    /* Timeline */
     .timeline::before {
         left: 20px;
     }
@@ -1905,87 +2076,113 @@
     }
 
     .timeline-content {
-        padding: 24px;
+        padding: 20px;
     }
 
+    .timeline-content h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .timeline-content h4 {
+        font-size: 0.95rem !important;
+    }
+
+    .timeline-content p,
+    .timeline-content li {
+        font-size: 0.85rem !important;
+    }
+
+    /* Generic Grid Layouts */
     .about-grid,
     .education-grid,
     .projects-grid,
     .articles-grid,
     .certifications-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
 
+    /* Stats */
     .hero-stats {
-        gap: 32px;
+        gap: 24px;
+        flex-direction: column;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem !important;
     }
 
+    .stat-label {
+        font-size: 0.85rem !important;
+    }
+
+    /* Headings */
     .about-heading,
     .experience-heading,
     .education-heading,
     .certifications-heading,
     .projects-heading,
     .articles-heading {
-        font-size: 2rem;
+        font-size: 1.6rem !important;
     }
 
+    /* Cards */
     .about-card,
     .education-card,
     .project-card,
     .article-card,
     .certification-card {
-        padding: 32px 24px;
+        padding: 24px 20px;
     }
 
     .education-card-header,
     .project-card-header,
     .article-card-header,
     .certification-card-header {
-        padding: 20px;
+        padding: 16px;
     }
 
+    /* CTAs */
     .about-cta,
     .contact-cta {
-        padding: 32px 24px;
+        padding: 28px 20px;
     }
 
     .about-cta-content h4,
     .cta-content h4 {
-        font-size: 1.6rem;
+        font-size: 1.4rem !important;
     }
 
+    .cta-content p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Content Padding */
     .project-content,
     .article-content,
     .certification-content {
-        padding: 24px;
+        padding: 20px;
     }
 
+    /* Contact Section */
     .contact-options {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
 
     .contact-card {
-        padding: 32px 24px;
+        padding: 28px 20px;
     }
 
     .contact-heading {
-        font-size: 2rem;
+        font-size: 1.6rem !important;
     }
 
-    .contact-cta {
-        padding: 32px 24px;
+    .contact-text {
+        font-size: 1rem !important;
     }
 
-    .cta-content h4 {
-        font-size: 1.6rem;
-    }
-
+    /* CTA Actions */
     .cta-actions {
         flex-direction: column;
         align-items: center;
@@ -1996,21 +2193,85 @@
         max-width: 280px;
         justify-content: center;
     }
+
+    /* Footer */
+    .footer {
+        padding: 40px 20px !important;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .contact-link {
+        font-size: 0.85rem !important;
+    }
+
+    .copyright {
+        font-size: 0.8rem !important;
+    }
 }
 
 @media (max-width: 480px) {
     .section {
-        padding: 100px 0;
+        padding: 60px 0;
+    }
+
+    .hero {
+        padding: 60px 12px 40px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    .hero-description {
+        font-size: 0.85rem !important;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Extra small cards */
+    .project-slide-card,
+    .article-slide-card {
+        padding: 16px;
+    }
+
+    .project-slide-card h3 {
+        font-size: 1rem !important;
     }
 
     .timeline-content {
-        padding: 20px;
+        padding: 16px;
     }
 
     .project-content,
     .article-content,
     .certification-content {
-        padding: 20px;
+        padding: 16px;
+    }
+
+    /* Buttons */
+    .btn {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+    }
+
+    /* Section headers */
+    .section-header h2 {
+        font-size: 1.5rem !important;
     }
 }
 
