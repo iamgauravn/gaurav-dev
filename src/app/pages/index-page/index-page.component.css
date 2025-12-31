@@ -811,23 +811,59 @@
 /* Responsive */
 @media (max-width: 768px) {
     .navbar {
-        width: calc(100% - 32px);
+        width: calc(100% - 16px);
         top: 16px;
-        padding: 0 16px;
+        padding: 0 8px;
+        /* Minimize padding to 8px */
         height: 56px;
-        background: rgba(20, 20, 20, 0.85);
-        /* Slightly more opaque on mobile */
+        background: rgba(20, 20, 20, 0.95);
+        justify-content: space-between;
+        align-items: center;
+        /* Enforce vertical centering */
     }
 
-    .nav-right span {
+    /* Restore Brand Name */
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .brand-name {
+        font-size: 1.05rem;
+        /* Slightly smaller to ensure fit */
+    }
+
+    .nav-left .btn-chat {
         display: none;
-        /* Hide text labels on mobile, keep icons */
+    }
+
+    /* Hide text labels, show icons */
+    .nav-right .nav-link span {
+        display: none;
+    }
+
+    /* SHOW ALL ICONS */
+    .mobile-hide {
+        display: flex !important;
+    }
+
+    .nav-right {
+        gap: 4px;
+        /* Essential for 320px screens */
+        width: auto;
+        padding: 0;
+        align-items: center;
     }
 
     .nav-right .nav-link {
-        font-size: 1.1rem;
-        /* Make icons slightly larger for touch */
-        padding: 8px;
+        font-size: 1rem;
+        /* Precise icon sizing */
+        padding: 4px;
+        /* Minimal touch target padding */
+    }
+
+    .btn-chat {
+        display: none;
     }
 
     .hero-section {
