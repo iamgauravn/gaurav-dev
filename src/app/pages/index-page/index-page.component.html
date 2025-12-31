@@ -1,420 +1,231 @@
 <!-- Clean, Professional Portfolio Design -->
-<div class="portfolio-container">
+<!-- Portfolio Container -->
+<div class="portfolio-wrapper">
+
+    <!-- Floating Header -->
+    <header class="navbar glass">
+        <div class="nav-left">
+            <span class="brand-name">gaurav<span class="text-accent">.</span></span>
+            <a href="mailto:gaurav110dev@gmail.com" class="btn-chat glass">
+                Let's Chat
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <a href="https://www.linkedin.com/in/iamgaurav110/" target="_blank" class="nav-link" title="LinkedIn">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/iamgauravn" target="_blank" class="nav-link" title="GitHub">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://stackoverflow.com/users/23102941/gaurav-nandankar" target="_blank" class="nav-link"
+                title="StackOverflow">
+                <i class="fab fa-stack-overflow"></i> Stack
+            </a>
+            <a href="https://dev.to/gaurav-nandankar" target="_blank" class="nav-link" title="Dev.to">
+                <i class="fab fa-dev"></i> Dev.to
+            </a>
+            <a href="https://medium.com/@gaurav110dev" target="_blank" class="nav-link" title="Medium">
+                <i class="fab fa-medium"></i> Medium
+            </a>
+            <a href="https://drive.google.com/drive/folders/1F3NhdjbnylDbOKUrBrxb_UNpIdwmrBnu?usp=sharing"
+                target="_blank" class="nav-link highlight" title="Download CV">
+                <i class="fas fa-file-alt"></i> CV
+            </a>
+        </div>
+    </header>
+
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Gaurav Nandankar</h1>
-            <p class="hero-subtitle">Software Development Engineer</p>
-            <p class="hero-description">
-                I build robust, scalable applications with modern technologies. 
-                Specializing in .NET, Angular, and Android development with {{ totalExperience }} of experience.
-                I integrate AI into business solutions to drive innovation and efficiency.
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">25+</span>
-                    <span class="stat-label">Apps Built</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">{{ totalExperience }}</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">30+</span>
-                    <span class="stat-label">Articles Published</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-            </div>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-            <div class="social-links">
-                <a (click)="open(1)" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a (click)="open(2)" class="social-link" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a (click)="open(3)" class="social-link" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a (click)="open(4)" class="social-link" aria-label="Stack Overflow">
-                    <i class="fab fa-stack-overflow"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+    <section class="hero-section">
+        <!-- Spotlight Effect Background -->
+        <div class="spotlight"></div>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">The Story Behind the Code</h2>
-            <div class="about-content">
-                <div class="about-intro">
-                    <div class="about-icon">
-                        <i class="fas fa-user-astronaut"></i>
-                    </div>
-                    <h3 class="about-heading">Passionate Developer, Problem Solver, Innovator</h3>
-                </div>
-                
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="about-card-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4>Full-Stack Developer</h4>
-                        <p>I craft robust, scalable applications using modern technologies like .NET, Angular, and Android. Every line of code is written with purpose and performance in mind.</p>
-                        <div class="about-card-details">
-                            <span class="detail-tag">.NET Core</span>
-                            <span class="detail-tag">Angular</span>
-                            <span class="detail-tag">Android</span>
-                            <span class="detail-tag">SQL Server</span>
-                        </div>
-                    </div>
-                    
-                    <div class="about-card">
-                        <div class="about-card-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h4>AI Integration Expert</h4>
-                        <p>I seamlessly integrate AI technologies into business solutions to drive innovation, automation, and efficiency. From chatbots to predictive analytics, I bring intelligence to applications.</p>
-                        <div class="about-card-details">
-                            <span class="detail-tag">Google Gemini</span>
-                            <span class="detail-tag">Semantic Kernel</span>
-                            <span class="detail-tag">OpenCV</span>
-                            <span class="detail-tag">MCP</span>
-                        </div>
-                    </div>
-                    
-                    <div class="about-card">
-                        <div class="about-card-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h4>Innovation Catalyst</h4>
-                        <p>I don't just build software—I transform business processes and exceed client expectations. Every project is an opportunity to push boundaries and create something extraordinary.</p>
-                        <div class="about-card-details">
-                            <span class="detail-tag">Microservices</span>
-                            <span class="detail-tag">Docker</span>
-                            <span class="detail-tag">Azure</span>
-                            <span class="detail-tag">SignalR</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-cta">
-                    <div class="about-cta-content">
-                        <h4>Want to See My Journey?</h4>
-                        <p>Download my resume to explore my complete professional story and achievements.</p>
-                    </div>
-                    <a (click)="open(7)" class="btn btn-primary">
-                        <i class="fas fa-download"></i>
-                        Download Resume
-                    </a>
+        <div class="hero-content container">
+            <span class="hero-greeting">Hi, I'm</span>
+            <h1 class="hero-name">
+                Gaurav<br>
+                Nandankar
+            </h1>
+
+            <div class="hero-bio">
+                <p>
+                    Software Engineer, Hands-on Cloud Architect, Technical Founder.
+                    Specializing in <strong>.NET, Angular, and Android</strong> development.
+                </p>
+                <p>
+                    I build virtually with Azure, SignalR, Docker, and AI agents.
+                    I also build physical things with code.
+                </p>
+
+                <div class="hero-cta">
+                    <a href="mailto:gaurav110dev@gmail.com" class="btn btn-primary">Schedule a Call</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">My Professional Journey</h2>
-            <div class="experience-intro">
-                <div class="experience-icon">
-                    <i class="fas fa-briefcase"></i>
+    <!-- Experience & Education Split -->
+    <section class="experience-section container">
+        <div class="row">
+            <!-- Experience Column -->
+            <div class="col-lg-7 col-md-12">
+                <div class="section-header">
+                    <h2>Experience</h2>
+                    <p>My professional journey.</p>
                 </div>
-                <h3 class="experience-heading">Building the Future, One Project at a Time</h3>
-                <p class="experience-text">From startups to enterprise solutions, I've had the privilege of working on diverse projects that have shaped my expertise and passion for technology.</p>
-            </div>
-            
-            <div class="timeline">
-                <div *ngFor="let exp of experienceData; let i = index" class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-badge">
-                                <i class="fas fa-star"></i>
+                <div class="timeline-list">
+                    <div *ngFor="let exp of experienceData" class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>{{ exp.title }}</h4>
+                                <span class="company-name">&#64; {{ exp.company }}</span>
                             </div>
-                            <h3 class="timeline-title">{{ exp.title }}</h3>
-                            <span class="timeline-company">{{ exp.company }}</span>
                             <span class="timeline-date">{{ exp.duration }}</span>
+                            <p class="timeline-desc">{{ exp.description }}</p>
                         </div>
-                        <p class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            {{ exp.location }}
-                        </p>
-                        <p class="timeline-description">{{ exp.description }}</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">Academic Excellence</h2>
-            <div class="education-intro">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
+            <!-- Education Column -->
+            <div class="col-lg-5 col-md-12">
+                <div class="section-header">
+                    <h2>Education</h2>
+                    <p>Academic foundation.</p>
                 </div>
-                <h3 class="education-heading">Foundation of Knowledge & Achievement</h3>
-                <p class="education-text">My educational journey has been marked by academic excellence and a commitment to continuous learning, providing the strong foundation for my professional success.</p>
-            </div>
-            
-            <div class="education-grid">
-                <div *ngFor="let edu of educationData; let i = index" class="education-card">
-                    <div class="education-card-header">
-                        <div class="education-card-icon">
-                            <i class="fas fa-university"></i>
+                <div class="education-list">
+                    <div *ngFor="let edu of educationData" class="edu-card">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="education-card-badge">
-                            <i class="fas fa-award"></i>
-                        </div>
-                    </div>
-                    <div class="education-card-content">
-                        <h3 class="education-card-title">{{ edu.degree }}</h3>
-                        <span class="education-card-institution">{{ edu.institution }}</span>
-                        <span class="education-card-date">{{ edu.duration }}</span>
-                        <p class="education-card-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            {{ edu.location }}
-                        </p>
-                        <div class="education-card-achievements">
-                            <div class="achievement-item" *ngIf="edu.cgpa">
-                                <span class="achievement-label">CGPA</span>
-                                <span class="achievement-value">{{ edu.cgpa }}</span>
-                            </div>
-                            <div class="achievement-item" *ngIf="edu.percentage">
-                                <span class="achievement-label">Percentage</span>
-                                <span class="achievement-value">{{ edu.percentage }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses & Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Recognition & Achievements</h2>
-            <div class="certifications-intro">
-                <div class="certifications-icon">
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <h3 class="certifications-heading">Validating Excellence Through Achievement</h3>
-                <p class="certifications-text">These certifications and achievements represent my commitment to continuous learning and professional development, ensuring I stay at the forefront of technology.</p>
-            </div>
-            
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-card-header">
-                        <div class="certification-card-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="certification-card-badge">
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="certification-content">
-                        <div class="certification-header">
-                            <h3 class="certification-title">Advanced Diploma in Computer Application</h3>
-                            <span class="certification-date">Feb 2019</span>
-                        </div>
-                        <p class="certification-description">Advanced Diploma in Computer Education | Computer Application Certificate</p>
-                        <div class="certification-type">
-                            <span class="certification-badge">Diploma</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="certification-card">
-                    <div class="certification-card-header">
-                        <div class="certification-card-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <div class="certification-card-badge">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                    </div>
-                    <div class="certification-content">
-                        <div class="certification-header">
-                            <h3 class="certification-title">Academic Excellence Certificate</h3>
-                            <span class="certification-date">Jan 2023</span>
-                        </div>
-                        <p class="certification-description">
-                            Awarded "Facilitate with Academic Excellence Certificate" for securing second rank in BCA final year 
-                            at Vimal Tormal Poddar BCA College. Demonstrated commitment to academic excellence, leadership, and teamwork.
-                        </p>
-                        <div class="certification-type">
-                            <span class="certification-badge">Achievement</span>
+                        <div class="edu-info">
+                            <h4>{{ edu.degree }}</h4>
+                            <span class="edu-inst">{{ edu.institution }}</span>
+                            <span class="edu-date">{{ edu.duration }}</span>
+                            <div class="edu-score" *ngIf="edu.cgpa">{{ edu.cgpa }}</div>
+                            <div class="edu-score" *ngIf="edu.percentage">{{ edu.percentage }}</div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Certifications (Nested here or separate) -->
+                <div class="section-header mt-5">
+                    <h2>Certifications</h2>
+                </div>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <i class="fas fa-certificate cert-icon"></i>
+                        <div>
+                            <h4>Advanced Diploma in Computer Application</h4>
+                            <span class="cert-date">Feb 2019</span>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-medal cert-icon"></i>
+                        <div>
+                            <h4>Academic Excellence Certificate</h4>
+                            <span class="cert-date">Jan 2023</span>
+                        </div>
+                    </div>
+                    <!-- <div class="cert-item">
+                        <i class="fab fa-aws cert-icon"></i>
+                        <div>
+                            <h4>AWS S3 Basics - Coursera</h4>
+                            <span class="cert-date">Apr 2025</span>
+                        </div>
+                    </div> -->
+                    <!-- <div class="cert-item">
+                        <i class="fab fa-aws cert-icon"></i>
+                        <div>
+                            <h4>AWS Certified Cloud Practitioner - GeeksforGeeks</h4>
+                            <span class="cert-date">Jul 2025</span>
+                        </div>
+                    </div> -->
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Innovation in Action</h2>
-            <div class="projects-intro">
-                <div class="projects-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3 class="projects-heading">Turning Ideas Into Digital Reality</h3>
-                <p class="projects-text">Each project represents a unique challenge solved with creativity, technical expertise, and a passion for delivering exceptional user experiences.</p>
-            </div>
-            
-            <div class="projects-grid">
-                <div *ngFor="let project of projectData" class="project-card">
-                    <div class="project-card-header">
-                        <div class="project-card-icon">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                        <div class="project-type-badge">
-                            <span class="project-type">{{ project.type }}</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">{{ project.name }}</h3>
-                        <p class="project-description">{{ project.description }}</p>
-                        <div class="project-meta">
-                            <span class="project-tech">{{ project.technologies }}</span>
-                        </div>
-                        <div class="project-actions">
-                            <div class="project-links" *ngIf="project.githubLink">
-                                <a href="{{ project.githubLink }}" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    View Code
-                                </a>
-                            </div>
-                            <p class="project-note" *ngIf="project.githubNote">{{ project.githubNote }}</p>
-                        </div>
+    <section class="projects-section container" id="projects">
+        <div class="section-header">
+            <h2>Projects</h2>
+            <p>A few things I've been building.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div *ngFor="let project of projectData" class="project-card">
+                <div class="project-info">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.description }}</p>
+                    <div class="tech-stack">
+                        {{ project.technologies }}
                     </div>
                 </div>
+                <a *ngIf="project.githubLink" href="{{ project.githubLink }}" target="_blank" class="project-link-icon">
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Skills / Tech Stack Section -->
+    <section class="skills-section container">
+        <div class="section-header">
+            <h2>Technologies</h2>
+            <p>Tools and frameworks I work with.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-tag">.NET Core</div>
+            <div class="skill-tag">C#</div>
+            <div class="skill-tag">Angular</div>
+            <div class="skill-tag">Android (Kotlin/Java)</div>
+            <div class="skill-tag">SQL Server</div>
+            <div class="skill-tag">Azure</div>
+            <div class="skill-tag">Docker</div>
+            <div class="skill-tag">SignalR</div>
+            <div class="skill-tag">Google Gemini</div>
+            <div class="skill-tag">Microservices</div>
+            <div class="skill-tag">Semantic Kernel</div>
+            <div class="skill-tag">Python</div>
         </div>
     </section>
 
     <!-- Articles Section -->
-    <section id="articles" class="section">
-        <div class="container">
-            <h2 class="section-title">Sharing Knowledge & Insights</h2>
-            <div class="articles-intro">
-                <div class="articles-icon">
-                    <i class="fas fa-pen-fancy"></i>
+    <section class="articles-section container" id="notes">
+        <div class="section-header">
+            <h2>Notes</h2>
+            <p>My thoughts on technology.</p>
+        </div>
+        <div class="articles-grid">
+            <div *ngFor="let article of articles" class="article-card">
+                <div class="article-icon">
+                    <i class="fas fa-newspaper"></i>
                 </div>
-                <h3 class="articles-heading">Thought Leadership in Technology</h3>
-                <p class="articles-text">I believe in the power of knowledge sharing. These articles represent my insights, experiences, and contributions to the developer community.</p>
-            </div>
-            
-            <div class="articles-grid">
-                <div *ngFor="let article of articles" class="article-card">
-                    <div class="article-card-header">
-                        <div class="article-card-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                        <div class="article-platform-badge">
-                            <span class="article-platform">{{ article.platform }}</span>
-                        </div>
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title">{{ article.title }}</h3>
-                        <p class="article-description">{{ article.description }}</p>
-                        <div class="article-actions">
-                            <a href="{{ article.link }}" target="_blank" class="article-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                Read Article
-                            </a>
-                        </div>
-                    </div>
+                <div class="article-content">
+                    <a href="{{ article.link }}" target="_blank" class="article-link">
+                        <h4>{{ article.title }}</h4>
+                    </a>
+                    <p class="article-desc">{{ article.description }}</p>
+                    <span class="article-meta">{{ article.platform }}</span>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's Build Something Amazing Together</h2>
-            <div class="contact-content">
-                <div class="contact-intro">
-                    <div class="contact-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3 class="contact-heading">Ready to Turn Ideas Into Reality?</h3>
-                    <p class="contact-text">
-                        Whether you have a groundbreaking project in mind, want to collaborate on something exciting, 
-                        or just want to chat about technology and innovation - I'm all ears! 
-                        Let's create something extraordinary together.
-                    </p>
-                </div>
-                
-                <div class="contact-options">
-                    <div class="contact-card">
-                        <div class="contact-card-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h4>Work Together</h4>
-                        <p>Have a project that needs expert development? Let's discuss how we can bring your vision to life.</p>
-                        <a (click)="open(3)" class="contact-card-btn">
-                            <i class="fas fa-envelope"></i>
-                            Start a Conversation
-                        </a>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-card-icon">
-                            <i class="fas fa-coffee"></i>
-                        </div>
-                        <h4>Grab Coffee</h4>
-                        <p>Interested in networking or just want to chat about tech? I'm always up for interesting conversations.</p>
-                        <a (click)="open(1)" class="contact-card-btn">
-                            <i class="fab fa-linkedin"></i>
-                            Connect & Chat
-                        </a>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-card-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h4>Share Ideas</h4>
-                        <p>Have an innovative idea or want to explore new technologies? Let's brainstorm together!</p>
-                        <a (click)="open(2)" class="contact-card-btn">
-                            <i class="fab fa-github"></i>
-                            Explore My Work
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="contact-cta">
-                    <div class="cta-content">
-                        <h4>Don't Wait - Let's Connect Today!</h4>
-                        <p>Every great collaboration starts with a simple hello. What are you waiting for?</p>
-                    </div>
-                    <div class="cta-actions">
-                        <a (click)="open(3)" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Message
-                        </a>
-                        <a (click)="open(1)" class="btn btn-secondary">
-                            <i class="fab fa-linkedin"></i>
-                            LinkedIn Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <footer class="footer container">
+        <div class="contact-info">
+            <a href="mailto:gaurav110dev@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i> gaurav110dev&#64;gmail.com
+            </a>
+            <span class="separator">|</span>
+            <a href="tel:+917698218655" class="contact-link">
+                <i class="fas fa-phone-alt"></i> +91 7698218655
+            </a>
         </div>
-    </section>
+        <p class="copyright">© {{ totalExperience }} Experience & Counting. Built by Gaurav Nandankar.</p>
+    </footer>
+
 </div>

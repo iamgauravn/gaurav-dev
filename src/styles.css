@@ -1,4 +1,19 @@
-/* Global Professional Styles - Inspired by Victor Eke & Isaac Fayemi */
+/* Global Styles - Dark "Mike" Aesthetic (Monospace Update) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --text-primary: #e5e5e5;
+  --text-secondary: #a3a3a3;
+  --accent-color: #FCD34D;
+  /* Yellow from reference */
+  --highlight-yellow: #FCD34D;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(10, 10, 10, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,195 +22,111 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Account for fixed navbar */
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.6;
-  color: #f8fafc;
-  background: #0a0a0a;
+  font-family: 'Space Mono', monospace;
+  /* Monospace base */
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.7;
   min-height: 100vh;
-  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar for dark theme */
+strong,
+b {
+  color: var(--highlight-yellow);
+  font-weight: 700;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(10, 10, 10, 0.5);
+  background: var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #374151;
+  background: #333;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4b5563;
+  background: #555;
 }
 
-/* Selection styles */
-::selection {
-  background: rgba(248, 250, 252, 0.2);
-  color: #f8fafc;
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-::-moz-selection {
-  background: rgba(248, 250, 252, 0.2);
-  color: #f8fafc;
-}
-
-/* Focus styles for accessibility */
-*:focus {
-  outline: none;
-}
-
-*:focus-visible {
-  outline: 2px solid #f8fafc;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* Button and link focus styles */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid #f8fafc;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* Utility classes */
 .text-gradient {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(to right, #fff, #a1a1aa);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.glass-effect {
-  background: rgba(17, 17, 17, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid #374151;
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
 }
 
-.glow-effect {
-  box-shadow: 0 0 20px rgba(248, 250, 252, 0.1);
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  /* Pill shape */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
 
-/* Animation classes */
-.fade-in {
-  animation: fadeIn 0.6s ease-in-out;
+.btn-primary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.slide-up {
-  animation: slideUp 0.6s ease-out;
+.btn-primary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Loading spinner */
-.loading-spinner {
+.btn-icon {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(59, 130, 246, 0.3);
-  border-top: 3px solid #3b82f6;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  color: var(--text-secondary);
+  transition: color 0.2s;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.btn-icon:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/* Print styles */
-@media print {
-  * {
-    background: white !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  
-  .navbar,
-  .btn,
-  .social-links {
-    display: none !important;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  :root {
-    --primary-color: #0000ff;
-    --secondary-color: #ffffff;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-
-  .experience-item,
-  .education-item,
-  .project-item,
-  .blog-post {
-    width: 100%;
-    margin: 10px 0;
-  }
-}
-
-.section-header {
-  width: 100%;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #00d4ff;
-  margin: 60px 0 40px 0;
-  text-shadow: 0 0 24px rgba(0,212,255,0.15);
-  font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
+ul {
+  list-style: none;
 }

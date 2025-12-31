@@ -55,11 +55,11 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
 
   projectData = [
     {
-      name: 'TaskIntel',
-      description: 'AI-Powered Employee Activity Analytics Platform - A comprehensive full-stack analytics platform designed to track, analyze, and optimize employee productivity through AI-driven insights. Features real-time activity tracking with SignalR, AI-powered analytics using Google Gemini, comprehensive dashboard with interactive visualizations, and automated PDF reporting. Built as a weekend project exploring AI and workplace analytics.',
-      technologies: '.NET 8, ASP.NET Core, SignalR, Entity Framework, Hangfire, Microsoft Semantic Kernel, Flutter, Dart, HTML5, CSS3, JavaScript, Chart.js, SQL Server, Hive, Google Gemini API, Docker, JWT',
-      githubLink: 'https://github.com/iamgauravn/TaskIntel',
-      type: 'PERSONAL'
+      name: 'LinkPOS',
+      description: 'A comprehensive fiscal receipt printing system integrating with government tax compliance systems (VSDC/E-SDC). Handles various transaction types (Cash, Return, Credit, Layby, Quote), manages tax API integration with secure certificate authentication, and generates 9+ types of RDLC reports. Built to ensure legal compliance for point-of-sale transactions.',
+      technologies: '.NET, C#, WinForms, MSSQL, VSDC/E-SDC API, RDLC Reports, TaxCore Authentication',
+      type: 'INDUSTRIAL',
+      githubNote: 'GitHub link not available for INDUSTRIAL projects.'
     },
     {
       name: 'ProRanked',
@@ -81,6 +81,34 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
       technologies: '.NET C#, MSSQL, Entity Framework, ADO.NET, Angular',
       type: 'INDUSTRIAL',
       githubNote: 'GitHub link not available for INDUSTRIAL projects.'
+    },
+    {
+      name: 'Semantic NIC Search API',
+      description: 'High-performance Python FastAPI service for semantic search of National Industrial Classification codes. Uses sentence-transformers (all-MiniLM-L6-v2) for vector embeddings to understand user intent behind business descriptions instead of simple keyword matching.',
+      technologies: 'Python, FastAPI, Sentence-Transformers, Pandas, Scikit-learn, Uvicorn',
+      githubLink: 'https://github.com/iamgauravn/semantic-nic-api',
+      type: 'PERSONAL'
+    },
+    {
+      name: 'AliPayIntegration',
+      description: 'A robust .NET integration library for Alipay payment gateway. Handles payment processing, signature verification, and asynchronous notifications (webhooks) to facilitate secure cross-border transactions.',
+      technologies: '.NET, C#, Alipay SDK, Cryptography',
+      githubLink: 'https://github.com/iamgauravn/AliPayIntegration',
+      type: 'PERSONAL'
+    },
+    {
+      name: 'TaskIntel',
+      description: 'AI-Powered Employee Activity Analytics Platform - A comprehensive full-stack analytics platform designed to track, analyze, and optimize employee productivity through AI-driven insights. Features real-time activity tracking with SignalR, AI-powered analytics using Google Gemini, comprehensive dashboard with interactive visualizations, and automated PDF reporting. Built as a weekend project exploring AI and workplace analytics.',
+      technologies: '.NET 8, ASP.NET Core, SignalR, Entity Framework, Hangfire, Microsoft Semantic Kernel, Flutter, Dart, HTML5, CSS3, JavaScript, Chart.js, SQL Server, Hive, Google Gemini API, Docker, JWT',
+      githubLink: 'https://github.com/iamgauravn/TaskIntel',
+      type: 'PERSONAL'
+    },
+    {
+      name: 'TeamsListener (DAMN JAM REVERSE)',
+      description: 'An Android application that automates attendance tracking by monitoring Microsoft Teams notifications. It runs as a background service, stores logs locally in a Room Database, and uses Google Gemini AI to analyze work hours, breaks, and overtime, generating detailed email reports.',
+      technologies: 'Java, Android SDK, Room Database, Google Gemini API, Retrofit, OkHttp',
+      githubLink: 'https://github.com/iamgauravn/DAMN-JAMN_REVERSE',
+      type: 'PERSONAL'
     },
     {
       name: 'Ai-Based-Attendance-System',
@@ -183,7 +211,7 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // Animations removed for clean design
   }
- 
+
   getTotalExperience(): string {
     const now = new Date();
     const experience = this.calculateExperience(this.totalExperienceStartDate, now);
@@ -237,37 +265,37 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
     return `${totalYears} years`;
   }
 
-  open(position:number) {
+  open(position: number) {
 
-    switch(position) {
-      case 1 :
+    switch (position) {
+      case 1:
         window.open("https://www.linkedin.com/in/iamgaurav110/", '_blank');
         break
 
-      case 2 :
+      case 2:
         window.open("https://github.com/iamgauravn", '_blank');
         break
-      
-      case 3 :
+
+      case 3:
         window.open('mailto:gaurav110dev@gmail.com', '_blank');
         break
-      
-      case 4 :
+
+      case 4:
         window.open("https://stackoverflow.com/users/23102941/gaurav-nandankar", '_blank');
         break
-      
-      case 5 :
+
+      case 5:
         window.open("https://dev.to/i_a_m_g_a_u_r_a_v", '_blank');
         break
-    
-      case 6 :
+
+      case 6:
         window.open("https://dribbble.com/gaurav_dev", '_blank');
         break
 
-      case 7 :
+      case 7:
         window.open("https://drive.google.com/drive/folders/1F3NhdjbnylDbOKUrBrxb_UNpIdwmrBnu?usp=sharing", '_blank');
         break
-          
+
     }
 
   }
