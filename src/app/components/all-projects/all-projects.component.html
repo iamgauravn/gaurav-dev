@@ -1,0 +1,24 @@
+<div class="overlay-container">
+    <div class="overlay-header container">
+        <h2 class="overlay-title">All Projects ({{ projects.length }})</h2>
+        <button class="close-btn" (click)="closeOverlay()">
+            <i class="fas fa-times"></i> Close
+        </button>
+    </div>
+
+    <div class="overlay-content container">
+        <div class="projects-grid">
+            <div *ngFor="let project of projects" class="project-card" (click)="onProjectClick(project)">
+                <div class="project-header">
+                    <div class="project-type">{{ project.type }}</div>
+                    <i class="fas fa-arrow-right action-icon"></i>
+                </div>
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+                <div class="project-tech">
+                    {{ project.technologies }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

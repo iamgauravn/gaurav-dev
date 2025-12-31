@@ -1,0 +1,51 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content glass" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="closeModal()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-header">
+            <div class="header-top">
+                <span class="project-type">{{ project?.type }}</span>
+                <div class="project-links">
+                    <a *ngIf="project?.githubLink" [href]="project.githubLink" target="_blank" class="modal-link">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                </div>
+            </div>
+            <h2>{{ project?.name }}</h2>
+            <div class="role-badge" *ngIf="project?.role">
+                <i class="fas fa-user-tag"></i> {{ project.role }}
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <div class="description-section">
+                <h3>Overview</h3>
+                <p>{{ project?.longDescription || project?.description }}</p>
+            </div>
+
+            <div class="features-section" *ngIf="project?.features && project.features.length > 0">
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    <li *ngFor="let feature of project.features">
+                        <i class="fas fa-check-circle"></i> {{ feature }}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tech-section">
+                <h3>Tech Stack</h3>
+                <div class="tech-tags">
+                    <span *ngFor="let tech of techStackArray" class="tech-tag">{{ tech }}</span>
+                </div>
+            </div>
+
+            <div class="challenges-section" *ngIf="project?.challenges">
+                <h3> <i class="fas fa-mountain"></i> Challenges & Solutions</h3>
+                <p>{{ project?.challenges }}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
