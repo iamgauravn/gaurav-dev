@@ -55,19 +55,36 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
 
   projectData = [
     {
-      name: 'LinkPOS',
-      description: 'A comprehensive fiscal receipt printing system integrating with government tax compliance systems (VSDC/E-SDC).',
-      longDescription: 'LinkPOS is a mission-critical Point of Sale (POS) backend solution designed for high-volume retail environments requiring strict compliance with tax regulations. It integrates directly with government VSDC/E-SDC systems to cryptographically sign every transaction. Beyond compliance, it serves as a complete retail management engine handling complex transaction types including laybys, quotes, and credit notes.',
+      name: 'Technician Platform',
+      description: 'SaaS-based technician workflow and business management system for industrial restoration companies.',
+      longDescription: 'A comprehensive multi-tenant enterprise solution designed for building and restoration companies. It streamlines the entire damage restoration lifecycle, from initial customer contact and job assignment to field technician management and automated, regulatory-compliant report generation.',
       features: [
-        'Real-time tax compliance with VSDC/E-SDC integration',
-        'Secure smart card & certificate-based authentication',
-        'Support for complex transaction types: Layby, Quote, Return, Credit',
-        'Generation of 9+ types of regulatory RDLC reports',
-        'Offline capability with local buffering and sync'
+        'Multi-tenant architecture with isolated data & branding',
+        'Automated PDF reporting and invoice generation (Hangfire)',
+        'Real-time technician task tracking and notifications (SignalR)',
+        'Comprehensive media management (Order-linked photos/docs)',
+        'Full-scale CRM for customers, suppliers, and insurance adjusters'
       ],
-      role: 'Lead Developer',
-      challenges: 'Implementing the cryptographic signing protocol required precise byte-level manipulation and error handling to ensure 100% compliance without slowing down the checkout process.',
-      technologies: '.NET, C#, WinForms, MSSQL, VSDC/E-SDC API, RDLC Reports, TaxCore Authentication',
+      role: 'Lead Full-Stack Architect',
+      challenges: 'Implementing a scalable multi-tenant architecture with dynamic theme injection and branding while ensuring zero data leakage between competing firms.',
+      technologies: '.NET 8, Angular 19, SQL Server, SignalR, Hangfire, ag-Grid, CoreUI, Bootstrap 5',
+      type: 'INDUSTRIAL',
+      githubNote: 'GitHub link not available for INDUSTRIAL projects.'
+    },
+    {
+      name: 'LinkERP',
+      description: 'Enterprise ERP solution with integrated WinUI POS system and real-time TaxCore compliance.',
+      longDescription: 'A multi-faceted enterprise system combining a high-performance WinUI-based Point of Sale (POS) and a modern Angular/.NET ERP backend. The core innovation lies in its seamless integration with government TaxCore systems (VSDC/E-SDC), ensuring 100% fiscal compliance through real-time cryptographic transaction signing across thousands of retail terminals.',
+      features: [
+        'Real-time TaxCore (VSDC/E-SDC) fiscal compliance',
+        'Dual-architecture: WinUI (POS) + Angular/.NET (ERP)',
+        'Enterprise-level ledger and inventory management',
+        'Secure smart card & certificate-based authentication',
+        'Generation of 15+ types of regulatory RDLC & Excel reports'
+      ],
+      role: 'Lead Developer (TaxCore Integration Architect)',
+      challenges: 'Bridging the gap between legacy retail workflows and modern fiscal requirements, while maintaining high availability for the WinUI offline-first terminals.',
+      technologies: '.NET, C#, WinUI, Angular, MSSQL, VSDC/E-SDC API, RDLC Reports, SignalR',
       type: 'INDUSTRIAL',
       githubNote: 'GitHub link not available for INDUSTRIAL projects.'
     },
@@ -87,6 +104,23 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
       technologies: '.NET C#, Microservices, MSSQL, Entity Framework, Azure, Minio, Android, Angular, Redis, Docker, GithubWorkflow, Dapper, Coolify',
       type: 'INDUSTRIAL',
       githubNote: 'GitHub link not available for INDUSTRIAL projects.'
+    },
+    {
+      name: 'TaskIntel',
+      description: 'Enterprise-grade employee analytics platform leveraging GenAI for deep productivity insights.',
+      longDescription: 'TaskIntel is a sophisticated industrial platform that bridges the gap between raw activity data and qualitative performance analysis. By integrating real-time SignalR feeds with Google Gemini AI, it converts developer workflows (commits, active hours, task velocity) into actionable management summaries. Designed for scalability and high-concurrency environments.',
+      features: [
+        'AI-driven performance synthesis (Google Gemini)',
+        'Real-time operational dashboards via SignalR',
+        'Automated enterprise reporting pipelines (Hangfire)',
+        'Cross-platform mobile accessibility (Flutter)',
+        'Banking-standard security (JWT & RBAC)'
+      ],
+      role: 'System Architect & Solo Developer',
+      challenges: 'Architecting a resilient async pipeline that streams heavy LLM responses into real-time SignalR hubs without blocking the main event loop or sacrificing UI responsiveness.',
+      technologies: '.NET 8, ASP.NET Core, SignalR, Entity Framework, Hangfire, Microsoft Semantic Kernel, Flutter, Dart, HTML5, CSS3, JavaScript, Chart.js, SQL Server, Hive, Google Gemini API, Docker, JWT',
+      githubLink: 'https://github.com/iamgauravn/TaskIntel',
+      type: 'INDUSTRIAL'
     },
     {
       name: 'Pancratium',
@@ -123,6 +157,92 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
       githubNote: 'GitHub link not available for INDUSTRIAL projects.'
     },
     {
+      name: 'Ai-Based-Attendance-System',
+      description: 'Commercially deployed Face Recognition solution for automated attendance and security logging.',
+      longDescription: 'Originally developed as a sophisticated college project and later acquired by a local organization, this system automates workforce management. It leverages advanced OpenCV algorithms for real-time identification and provides a robust administrative layer for registration, training, and automated Excel/CSV reporting.',
+      features: [
+        'High-accuracy Face Detection & Recognition',
+        'Commercial-grade registration & training module',
+        'Automated enterprise attendance logging',
+        'Intelligent confidence thresholding',
+        'Production-ready local deployment'
+      ],
+      role: 'System Designer & Original Developer',
+      challenges: 'Transitioning a research-based computer vision project into a stable, commercially viable product capable of handling varying environmental factors and diverse user edge cases.',
+      technologies: 'Python, Tkinter, OpenCV',
+      githubLink: 'https://github.com/iamgauravn/Ai-Based-Attendance-System',
+      type: 'INDUSTRIAL'
+    },
+    {
+      name: 'TeamsListener (DAMN JAM REVERSE)',
+      description: 'Android app automating attendance tracking by monitoring Teams notifications with AI analysis.',
+      longDescription: 'TeamsListener is a clever workaround automation tool for Android. It uses the NotificationListenerService API to intercept Microsoft Teams notifications on the device. It then parses these notifications to log start/stop times and uses Gemini AI to semantically understand if a message implies a break or a meeting.',
+      features: [
+        'Background service for notification interception',
+        'Local room database for secure log storage',
+        'AI-powered message intent classification',
+        'battery-optimized background processing',
+        'Automated email reporting'
+      ],
+      role: 'Mobile Developer',
+      challenges: 'Android\'s aggressive background process killing required implementing a robust foreground service and persistent notification strategy to keep the listener alive.',
+      technologies: 'Java, Android SDK, Room Database, Google Gemini API, Retrofit, OkHttp',
+      githubLink: 'https://github.com/iamgauravn/DAMN-JAMN_REVERSE',
+      type: 'INDUSTRIAL'
+    },
+    {
+      name: 'PallaraxWallpaper',
+      description: 'Industrial-grade Android solution for interactive live wallpapers with deep parallax effects.',
+      longDescription: 'Developed as a production-level utility, PallaraxWallpaper leverages low-level Android APIs to provide smooth video-to-wallpaper conversion and dynamic 3D depth effects. Built with a focus on battery efficiency and performance stability for wide consumer use.',
+      features: [
+        'Video to Live Wallpaper conversion',
+        'Parallax 3D depth effect for images',
+        'Battery-efficient rendering engine',
+        'Simple, intuitive Material Design UI',
+        'Local media picker and crop tools'
+      ],
+      role: 'Android Developer',
+      challenges: 'Optimizing high-frame-rate video rendering at the system wallpaper level while maintaining minimal battery impact and 100% stability across various Android versions.',
+      technologies: 'Android',
+      githubLink: 'https://github.com/iamgauravn/PallaraxWallpaper',
+      type: 'INDUSTRIAL'
+    },
+    {
+      name: 'data-export-console-app',
+      description: 'Enterprise data export utility for automated reporting, supporting complex SQL schemas and industrial formats.',
+      longDescription: 'An industrial-grade utility designed for robust data extraction. It connects to enterprise MSSQL environments to dump and format complex query results into regulatory-compliant PDF, CSV, and RTF documents with precise layout control.',
+      features: [
+        'Dynamic schema inspection',
+        'Support for PDF, CSV, TXT, and RTF export',
+        'Connection string management',
+        'Batch processing capability',
+        'Interactive CLI interface'
+      ],
+      role: 'Developer',
+      challenges: 'Handling complex, large-scale industrial datasets while ensuring formatting consistency across multiple export formats and maintaining data integrity during high-speed extraction.',
+      technologies: 'C#, SQL',
+      githubLink: 'https://github.com/iamgauravn/data-export-console-app',
+      type: 'INDUSTRIAL'
+    },
+    {
+      name: 'Criminal Detector (HackAura Hackathon)',
+      description: 'AI-powered face recognition system built in <24 hours for rapid identification from live camera feeds.',
+      longDescription: 'A high-pressure hackathon project for HackAura. We developed an end-to-end AI system that identifies faces from live camera feeds and synchronizes data to a real-time web dashboard. Built from scratch in less than a day, it showcases extreme rapid prototyping and multi-stack integration.',
+      features: [
+        'Real-time face detection and recognition',
+        'Live camera feed processing with OpenCV',
+        'Web dashboard with Angular for monitoring',
+        '.NET Core backend for data processing',
+        'Built from scratch in under 24 hours'
+      ],
+      role: 'Full-Stack Developer',
+      challenges: 'Solving the end-to-end integration of Python AI models with a .NET backend and Angular frontend under a 24-hour deadline, requiring optimized data flow and quick architectural decisions.',
+      technologies: 'Python, OpenCV, ASP.NET Core, C#, Angular, TypeScript',
+      githubLink: 'https://github.com/iamgauravn/Criminal-Detector',
+      linkedinPost: 'https://www.linkedin.com/posts/iamgaurav110_built-a-solution-that-detects-faces-in-real-activity-7381344944235560960-ZQFg',
+      type: 'HACKTHON'
+    },
+    {
       name: 'Semantic NIC Search API',
       description: 'High-performance Python FastAPI service for semantic search of National Industrial Classification codes.',
       longDescription: 'This API solves the problem of finding the correct National Industrial Classification (NIC) code for a business. Instead of relying on exact keyword matches, it uses a transformer-based LLM model to generate vector embeddings of the user\'s business description. It then performs a cosine similarity search against a vector database of NIC codes to find the conceptual match.',
@@ -157,74 +277,6 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
       type: 'PERSONAL'
     },
     {
-      name: 'TaskIntel',
-      description: 'AI-Powered Employee Activity Analytics Platform tracking productivity with SignalR and Gemini.',
-      longDescription: 'TaskIntel is an ambitious experimental platform that combines real-time data ingestion with Generative AI analysis. It tracks developer activity (commits, active hours, tasks) and uses Google Gemini to generate qualitative productivity insights rather than just quantitative metrics. It features a live dashboard powered by SignalR.',
-      features: [
-        'AI-generated productivity summaries (Gemini)',
-        'Real-time live dashboards (SignalR)',
-        'Automated PDF report generation (Hangfire)',
-        'Cross-platform mobile app (Flutter)',
-        'Secure JWT authentication'
-      ],
-      role: 'Solo Developer',
-      challenges: 'Integrating the streaming response from Gemini AI into a real-time SignalR feed required a complex async pipeline to ensure smooth UI updates.',
-      technologies: '.NET 8, ASP.NET Core, SignalR, Entity Framework, Hangfire, Microsoft Semantic Kernel, Flutter, Dart, HTML5, CSS3, JavaScript, Chart.js, SQL Server, Hive, Google Gemini API, Docker, JWT',
-      githubLink: 'https://github.com/iamgauravn/TaskIntel',
-      type: 'PERSONAL'
-    },
-    {
-      name: 'TeamsListener (DAMN JAM REVERSE)',
-      description: 'Android app automating attendance tracking by monitoring Teams notifications with AI analysis.',
-      longDescription: 'TeamsListener is a clever workaround automation tool for Android. It uses the NotificationListenerService API to intercept Microsoft Teams notifications on the device. It then parses these notifications to log start/stop times and uses Gemini AI to semantically understand if a message implies a break or a meeting.',
-      features: [
-        'Background service for notification interception',
-        'Local room database for secure log storage',
-        'AI-powered message intent classification',
-        'battery-optimized background processing',
-        'Automated email reporting'
-      ],
-      role: 'Mobile Developer',
-      challenges: 'Android\'s aggressive background process killing required implementing a robust foreground service and persistent notification strategy to keep the listener alive.',
-      technologies: 'Java, Android SDK, Room Database, Google Gemini API, Retrofit, OkHttp',
-      githubLink: 'https://github.com/iamgauravn/DAMN-JAMN_REVERSE',
-      type: 'PERSONAL'
-    },
-    {
-      name: 'Ai-Based-Attendance-System',
-      description: 'Face Recognition System made in Python using Tkinter and OpenCV for automated attendance.',
-      longDescription: 'A classic computer vision project that replaces manual roll calls. It uses Haar Cascades for face detection and LBPH (Local Binary Patterns Histograms) for face recognition to identify registered students in real-time video feeds and mark their attendance automatically in a CSV/Excel backend.',
-      features: [
-        'Real-time Face Detection & Recognition',
-        'GUI for student registration and training',
-        'Automated CSV attendance logging',
-        'Confidence score thresholding',
-        'Lightweight deployment on local machines'
-      ],
-      role: 'Developer',
-      challenges: 'Handling varying lighting conditions for recognition accuracy was the biggest hurdle, solved by preprocessing images with histogram equalization.',
-      technologies: 'Python, Tkinter, OpenCV',
-      githubLink: 'https://github.com/iamgauravn/Ai-Based-Attendance-System',
-      type: 'PERSONAL'
-    },
-    {
-      name: 'PallaraxWallpaper',
-      description: 'Native Android app allowing users to set custom photos and videos as interactive wallpapers.',
-      longDescription: 'PallaraxWallpaper gives users deep control over their Android home screen aesthetics. It enables setting videos as live wallpapers and applies parallax scrolling effects to static images, creating a depth perception effect that moves as the user tilts their phone.',
-      features: [
-        'Video to Live Wallpaper conversion',
-        'Parallax 3D depth effect for images',
-        'Battery-efficient rendering engine',
-        'Simple, intuitive Material Design UI',
-        'Local media picker and crop tools'
-      ],
-      role: 'Android Developer',
-      challenges: 'Managing memory usage while rendering live video wallpapers to avoid crashing the launcher or draining the battery excessively.',
-      technologies: 'Android',
-      githubLink: 'https://github.com/iamgauravn/PallaraxWallpaper',
-      type: 'PERSONAL'
-    },
-    {
       name: 'CodePulse',
       description: 'CodePulse is a blogging platform for developers to create, share, and read technical articles.',
       longDescription: 'CodePulse is a full-stack content platform built to demonstrate a clean Architecture. It features a rich text editor, image hosting, and a comment system. It serves as a reference implementation for connecting a strongly-typed Angular 17 frontend with a .NET 8 backend.',
@@ -239,23 +291,6 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
       challenges: 'Implementing secure image uploads and serving them efficiently required careful configuration of static file middleware and CORS policies.',
       technologies: '.NET 8.0, Angular 17.3.0',
       githubLink: 'https://github.com/iamgauravn/codepluse',
-      type: 'PERSONAL'
-    },
-    {
-      name: 'data-export-console-app',
-      description: 'C# console tool for exporting SQL database tables to PDF, CSV, and other formats.',
-      longDescription: 'A developer utility tool designed to quickly dump SQL data. It connects to any MSSQL instance, inspects the schema, and allows the user to export query results into formatted PDF reports, CSV files for analysis, or RTF documents.',
-      features: [
-        'Dynamic schema inspection',
-        'Support for PDF, CSV, TXT, and RTF export',
-        'Connection string management',
-        'Batch processing capability',
-        'Interactive CLI interface'
-      ],
-      role: 'Developer',
-      challenges: 'Generating well-formatted PDFs from dynamic tabular data required calculating column widths and page breaks programmatically.',
-      technologies: 'C#, SQL',
-      githubLink: 'https://github.com/iamgauravn/data-export-console-app',
       type: 'PERSONAL'
     },
     {
@@ -314,26 +349,157 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
   /* UI Logic for Details & View More */
   selectedProject: any = null;
   showAllProjects: boolean = false;
+  showToast: boolean = false;
+  toastMessage: string = '';
 
   openProjectDetail(project: any) {
     this.selectedProject = project;
-    // document.body.style.overflow = 'hidden'; // Lock scroll
+    if (this.isBrowser) {
+      document.body.style.overflow = 'hidden'; // Lock scroll
+    }
   }
 
   closeProjectDetail() {
     this.selectedProject = null;
-    // document.body.style.overflow = 'auto'; // Unlock scroll
+    if (this.isBrowser) {
+      document.body.style.overflow = 'auto'; // Unlock scroll
+    }
   }
 
   openAllProjects() {
     this.showAllProjects = true;
-    // document.body.style.overflow = 'hidden';
+    if (this.isBrowser) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   closeAllProjects() {
     this.showAllProjects = false;
-    // document.body.style.overflow = 'auto';
+    if (this.isBrowser) {
+      document.body.style.overflow = 'auto';
+    }
   }
+
+  // Comprehensive Tech Stack organized by category
+  techStack = {
+    frontend: [
+      { name: 'HTML', icon: 'fab fa-html5' },
+      { name: 'CSS', icon: 'fab fa-css3-alt' },
+      { name: 'JavaScript', icon: 'fab fa-js' },
+      { name: 'TypeScript', icon: 'fab fa-js' },
+      { name: 'Angular', icon: 'fab fa-angular' },
+      { name: 'Bootstrap', icon: 'fab fa-bootstrap' },
+      { name: 'Android UI', icon: 'fab fa-android' },
+      { name: 'Blazor', icon: 'fas fa-fire' },
+      { name: 'Figma', icon: 'fab fa-figma' }
+    ],
+    backend: [
+      { name: '.NET Core', icon: 'fas fa-code' },
+      { name: 'C#', icon: 'fas fa-code' },
+      { name: 'Java', icon: 'fab fa-java' },
+      { name: 'Kotlin', icon: 'fas fa-code' },
+      { name: 'Python', icon: 'fab fa-python' },
+      { name: 'Firebase', icon: 'fas fa-fire' },
+      { name: 'REST APIs', icon: 'fas fa-plug' },
+      { name: 'Entity Framework', icon: 'fas fa-database' },
+      { name: 'Dapper', icon: 'fas fa-database' },
+      { name: 'ADO.NET', icon: 'fas fa-database' },
+      { name: 'RDLC Reports', icon: 'fas fa-file-invoice' }
+    ],
+    databases: [
+      { name: 'MSSQL', icon: 'fas fa-database' },
+      { name: 'PostgreSQL', icon: 'fas fa-database' },
+      { name: 'SQLite', icon: 'fas fa-database' },
+      { name: 'Redis', icon: 'fas fa-database' }
+    ],
+    tools: [
+      { name: 'Git', icon: 'fab fa-git-alt' },
+      { name: 'Postman', icon: 'fas fa-plug' },
+      { name: 'Android Studio', icon: 'fab fa-android' },
+      { name: 'Visual Studio', icon: 'fas fa-code' },
+      { name: 'Azure', icon: 'fab fa-microsoft' },
+      { name: 'Docker', icon: 'fab fa-docker' },
+      { name: 'Semantic Kernel', icon: 'fas fa-puzzle-piece' },
+      { name: 'OpenCV', icon: 'fas fa-eye' },
+      { name: 'ONNX Runtime', icon: 'fas fa-brain' }
+    ]
+  };
+
+  // Expertise & Technical Leadership
+  expertiseData = [
+    {
+      icon: 'fa-globe',
+      title: 'Full-Stack Architecture',
+      description: 'Designing scalable web ecosystems using .NET Core microservices and modern Angular frontends.',
+      impact: 'End-to-end ownership of enterprise SaaS platforms.',
+      focus: 'Distributed Systems & Clean Architecture',
+      technologies: '.NET 8, C#, Angular, TypeScript'
+    },
+    {
+      icon: 'fa-database',
+      title: 'Backend & System Design',
+      description: 'Architecting high-performance data layers and optimizing SQL/NoSQL environments for scale.',
+      impact: 'Sub-second latency for high-concurrency data operations.',
+      focus: 'Performance Tuning & Schema Design',
+      technologies: 'MSSQL, PostgreSQL, Entity Framework, Dapper'
+    },
+    {
+      icon: 'fa-cogs',
+      title: 'System Integration & AI',
+      description: 'Bridging legacy systems with modern AI capabilities and real-time streaming services.',
+      impact: 'Automated complex workflows using GenAI & SignalR.',
+      focus: 'API Ecosystems & Intelligent Automation',
+      technologies: 'REST APIs, SignalR, Redis, Docker, Semantic Kernel'
+    },
+    {
+      icon: 'fa-mobile-alt',
+      title: 'Mobile Engineering',
+      description: 'Building robust cross-platform and native mobile solutions with a focus on performance.',
+      impact: 'Published high-retention apps with offline-first capabilities.',
+      focus: 'Native APIs & Battery Optimization',
+      technologies: 'Kotlin, Java, Android SDK, Flutter'
+    },
+    {
+      icon: 'fa-brain',
+      title: 'Applied AI & ML',
+      description: 'Integrating intelligent features using local and cloud-based LLMs for actionable insights.',
+      impact: 'Converting raw data into predictive analytics summaries.',
+      focus: 'ONNX Runtime, NLP, & Vector Search',
+      technologies: 'Python, OpenCV, Google Gemini, Vector DBs'
+    }
+  ];
+
+  // Engineering Principles
+  engineeringPrinciples = [
+    { icon: 'fa-code-branch', text: 'Clean Architecture & Best Practices' },
+    { icon: 'fa-tachometer-alt', text: 'Performance-First Engineering' },
+    { icon: 'fa-shield-alt', text: 'Security-Centric System Design' },
+    { icon: 'fa-project-diagram', text: 'Full Technical Ownership (SDLC)' },
+    { icon: 'fa-users-cog', text: 'Technical Mentorship & Collaboration' },
+    { icon: 'fa-file-signature', text: 'Strong Emphasis on Documentation' }
+  ];
+
+  // Client Testimonials - Real LinkedIn Recommendations
+  testimonials = [
+    {
+      name: 'Saad Shaikh',
+      role: 'Senior Flutter Developer & Team Leadership',
+      company: 'CodeX Lancers',
+      image: 'https://ui-avatars.com/api/?name=Saad+Shaikh&background=3b82f6&color=fff&size=128',
+      text: 'I had the privilege to work with Gaurav on a very challenging project, and I have been impressed continually by his exceptional technical expertise and dedication. As a very good .NET developer, Gaurav had an immense understanding of software development and could convert complex requirements into effective solutions that scale. His very proactive approach and thinking really improved the overall performance and functionality of our projects. I highly recommend Gaurav for any .NET development role or project that requires a talented, reliable, and forward-thinking professional.',
+      linkedin: 'https://www.linkedin.com/in/saad-shaikh'
+    },
+    {
+      name: 'Edwin Moreno',
+      role: 'Solution Architect',
+      company: 'ProRanked (EV Infrastructure)',
+      image: 'https://ui-avatars.com/api/?name=Edwin+Moreno&background=8b5cf6&color=fff&size=128',
+      text: 'Gaurav brought deep technical expertise in .NET development, with a strong focus on MassTransit, OCPP, and Azure. He played a key role in enhancing our microservices architecture by implementing reliable message-based communication with MassTransit. His understanding of OCPP was critical in supporting our integration with EV charging infrastructure. Beyond the technical side, Gaurav was incredibly easy to work with—proactive, detail-oriented, and a great communicator. I highly recommend Gaurav to any organization looking for a sharp, dependable, and collaborative .NET developer.',
+      linkedin: 'https://www.linkedin.com/in/edwin-moreno'
+    }
+  ];
+
+
 
   articles = [
     {
@@ -443,13 +609,7 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
   }
 
   get totalExperience(): string {
-    const now = new Date();
-    const startDate = this.totalExperienceStartDate;
-    const totalMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
-    const totalYears = (totalMonths / 12).toFixed(1);
-    return `${totalYears} years`;
+    return `3.5+ years`;
   }
 
   open(position: number) {
@@ -485,6 +645,45 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
 
     }
 
+  }
+
+
+
+  copyEmail() {
+    const email = 'gaurav110dev@gmail.com';
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(() => {
+        this.triggerToast('Email address copied to clipboard: ' + email);
+      }).catch(err => {
+        this.fallbackCopyTextToClipboard(email);
+      });
+    } else {
+      this.fallbackCopyTextToClipboard(email);
+    }
+  }
+
+  private fallbackCopyTextToClipboard(text: string) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";  // Avoid scrolling to bottom
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      this.triggerToast('Email address copied to clipboard: ' + text);
+    } catch (err) {
+      this.triggerToast('Could not copy email, please use: ' + text);
+    }
+    document.body.removeChild(textArea);
+  }
+
+  private triggerToast(message: string) {
+    this.toastMessage = message;
+    this.showToast = true;
+    setTimeout(() => {
+      this.showToast = false;
+    }, 3000);
   }
 
 }
