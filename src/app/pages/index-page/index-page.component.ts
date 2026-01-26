@@ -134,7 +134,7 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
         'Detailed exportable reporting'
       ],
       role: 'Full Stack Developer',
-      challenges: ' designing a multi-tenant schema that ensured strict data isolation while allowing for shared efficient queries was a key architectural challenge.',
+      challenges: 'Designing a multi-tenant schema that ensured strict data isolation while allowing for shared efficient queries was a key architectural challenge.',
       technologies: '.NET C#, MSSQL, Entity Framework, Angular, Multi-Tenant, Docker, Github Workflow, Redis and Dapper',
       type: 'INDUSTRIAL',
       githubNote: 'GitHub link not available for INDUSTRIAL projects.'
@@ -240,7 +240,7 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
       technologies: 'Python, OpenCV, ASP.NET Core, C#, Angular, TypeScript',
       githubLink: 'https://github.com/iamgauravn/Criminal-Detector',
       linkedinPost: 'https://www.linkedin.com/posts/iamgaurav110_built-a-solution-that-detects-faces-in-real-activity-7381344944235560960-ZQFg',
-      type: 'HACKTHON'
+      type: 'HACKATHON'
     },
     {
       name: 'Semantic NIC Search API',
@@ -609,7 +609,9 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
   }
 
   get totalExperience(): string {
-    return `3.5+ years`;
+    const now = new Date();
+    const exp = this.calculateExperience(this.totalExperienceStartDate, now);
+    return `${exp.years}.${exp.months}`;
   }
 
   open(position: number) {
@@ -632,7 +634,7 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
         break
 
       case 5:
-        window.open("https://dev.to/i_a_m_g_a_u_r_a_v", '_blank');
+        window.open("https://dev.to/gaurav-nandankar", '_blank');
         break
 
       case 6:

@@ -45,13 +45,14 @@
             <span class="hero-greeting"><span class="status-dot"></span> Architecture • Scalability • Intelligent
                 Systems</span>
             <h1 class="hero-name">
-                Senior Full-Stack<br>
-                Software Engineer
+                Software Development Engineer
             </h1>
 
             <div class="hero-bio">
                 <p>
-                    Hi, I'm <strong>Gaurav Nandankar</strong> an SDE with <strong>3.5+ years</strong> of experience
+                    Hi, I'm <strong>Gaurav Nandankar</strong> a Software Development Engineer with <strong>{{
+                        totalExperience }}+
+                        years</strong> of experience
                     architecting high-performance systems and production-grade applications.
                 </p>
                 <p>
@@ -65,8 +66,18 @@
                 <div class="social-proof-badges">
                     <div class="proof-badge">
                         <i class="fas fa-check-circle"></i>
-                        <span><strong>3.5+</strong> Years Experience</span>
+                        <span><strong>{{ totalExperience }}+</strong> Years Experience</span>
                     </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    </a>
+                    <a href="javascript:void(0)" (click)="copyEmail()" class="btn btn-outline"
+                        style="margin-left: 16px;">
+                        Contact Me
+                    </a>
                 </div>
 
 
@@ -105,85 +116,98 @@
 
     </section>
 
-    <!-- Experience & Education Split -->
-    <section class="experience-section container">
-        <div class="row">
-            <!-- Experience Column -->
-            <div class="col-lg-7 col-md-12">
-                <div class="section-header">
-                    <h2>Experience</h2>
-                    <p>My professional journey.</p>
-                </div>
-                <div class="timeline-list">
-                    <div *ngFor="let exp of experienceData" class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <h4>{{ exp.title }}</h4>
-                                <span class="company-name">&#64; {{ exp.company }}</span>
-                            </div>
-                            <span class="timeline-date">{{ exp.duration }}</span>
-                            <p class="timeline-desc">{{ exp.description }}</p>
-                        </div>
+    <!-- Skills / Tech Stack Section (High Recruit Visibility) -->
+    <section class="skills-section container">
+        <div class="section-header">
+            <h2>Technologies & Tools</h2>
+            <p>Full-stack expertise across the modern development ecosystem.</p>
+        </div>
+
+        <div class="tech-grid-wrapper">
+            <!-- Frontend Technologies -->
+            <div class="tech-category">
+                <h3 class="tech-category-title">
+                    <i class="fas fa-palette"></i> Frontend
+                </h3>
+                <div class="skills-grid">
+                    <div *ngFor="let tech of techStack.frontend" class="skill-tag">
+                        <i class="{{ tech.icon }}"></i> {{ tech.name }}
                     </div>
                 </div>
             </div>
 
-            <!-- Education Column -->
-            <div class="col-lg-5 col-md-12">
-                <div class="section-header">
-                    <h2>Education</h2>
-                    <p>Academic foundation.</p>
-                </div>
-                <div class="education-list">
-                    <div *ngFor="let edu of educationData" class="edu-card">
-                        <div class="edu-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="edu-info">
-                            <h4>{{ edu.degree }}</h4>
-                            <span class="edu-inst">{{ edu.institution }}</span>
-                            <span class="edu-date">{{ edu.duration }}</span>
-                            <div class="edu-score" *ngIf="edu.cgpa">{{ edu.cgpa }}</div>
-                            <div class="edu-score" *ngIf="edu.percentage">{{ edu.percentage }}</div>
-                        </div>
+            <!-- Backend Technologies -->
+            <div class="tech-category">
+                <h3 class="tech-category-title">
+                    <i class="fas fa-server"></i> Backend
+                </h3>
+                <div class="skills-grid">
+                    <div *ngFor="let tech of techStack.backend" class="skill-tag">
+                        <i class="{{ tech.icon }}"></i> {{ tech.name }}
                     </div>
                 </div>
+            </div>
 
-                <!-- Certifications (Nested here or separate) -->
-                <div class="section-header mt-5">
-                    <h2>Certifications</h2>
-                </div>
-                <div class="cert-list">
-                    <div class="cert-item">
-                        <i class="fas fa-certificate cert-icon"></i>
-                        <div>
-                            <h4>Advanced Diploma in Computer Application</h4>
-                            <span class="cert-date">Feb 2019</span>
-                        </div>
+            <!-- Infrastructure & Tools -->
+            <div class="tech-category">
+                <h3 class="tech-category-title">
+                    <i class="fas fa-tools"></i> Infrastructure & Tools
+                </h3>
+                <div class="skills-grid">
+                    <div *ngFor="let tech of techStack.databases" class="skill-tag">
+                        <i class="{{ tech.icon }}"></i> {{ tech.name }}
                     </div>
-                    <div class="cert-item">
-                        <i class="fas fa-medal cert-icon"></i>
-                        <div>
-                            <h4>Academic Excellence Certificate</h4>
-                            <span class="cert-date">Jan 2023</span>
-                        </div>
+                    <div *ngFor="let tech of techStack.tools" class="skill-tag">
+                        <i class="{{ tech.icon }}"></i> {{ tech.name }}
                     </div>
-                    <!-- <div class="cert-item">
-                        <i class="fab fa-aws cert-icon"></i>
-                        <div>
-                            <h4>AWS S3 Basics - Coursera</h4>
-                            <span class="cert-date">Apr 2025</span>
-                        </div>
-                    </div> -->
-                    <!-- <div class="cert-item">
-                        <i class="fab fa-aws cert-icon"></i>
-                        <div>
-                            <h4>AWS Certified Cloud Practitioner - GeeksforGeeks</h4>
-                            <span class="cert-date">Jul 2025</span>
-                        </div>
-                    </div> -->
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience section (Full Width) -->
+    <section class="experience-section container">
+        <div class="section-header">
+            <h2>Experience</h2>
+            <p>My professional journey in software engineering.</p>
+        </div>
+        <div class="timeline-list full-width-timeline">
+            <div *ngFor="let exp of experienceData" class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <h4>{{ exp.title }}</h4>
+                        <span class="company-name">&#64; {{ exp.company }}</span>
+                    </div>
+                    <span class="timeline-date">{{ exp.duration }} <span class="timeline-loc">| {{ exp.location
+                            }}</span></span>
+                    <p class="timeline-desc">{{ exp.description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section (Higher Impact) -->
+    <section class="testimonials-section container">
+        <div class="section-header">
+            <h2>Recommendations</h2>
+            <p>Direct feedback from engineering leads and architects I've collaborated with.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div *ngFor="let testimonial of testimonials" class="testimonial-card glass">
+                <div class="testimonial-header">
+                    <img [src]="testimonial.image" [alt]="testimonial.name" class="testimonial-avatar">
+                    <div class="testimonial-info">
+                        <h4>{{ testimonial.name }}</h4>
+                        <p class="testimonial-role">{{ testimonial.role }}</p>
+                        <p class="testimonial-company">{{ testimonial.company }}</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">"{{ testimonial.text }}"</p>
+                <a [href]="testimonial.linkedin" target="_blank" class="linkedin-link">
+                    <i class="fab fa-linkedin"></i> View Profile
+                </a>
             </div>
         </div>
     </section>
@@ -281,70 +305,6 @@
         </div>
     </section>
 
-    <!-- Detailed Components -->
-    <app-all-projects *ngIf="showAllProjects" [projects]="projectData" (close)="closeAllProjects()"
-        (selectProject)="openProjectDetail($event)">
-    </app-all-projects>
-
-    <app-project-details *ngIf="selectedProject" [project]="selectedProject" (close)="closeProjectDetail()">
-    </app-project-details>
-
-    <!-- Skills / Tech Stack Section -->
-    <section class="skills-section container">
-        <div class="section-header">
-            <h2>Technologies & Tools</h2>
-            <p>Full-stack expertise across the modern development ecosystem.</p>
-        </div>
-
-        <!-- Frontend Technologies -->
-        <div class="tech-category">
-            <h3 class="tech-category-title">
-                <i class="fas fa-palette"></i> Frontend
-            </h3>
-            <div class="skills-grid">
-                <div *ngFor="let tech of techStack.frontend" class="skill-tag">
-                    <i class="{{ tech.icon }}"></i> {{ tech.name }}
-                </div>
-            </div>
-        </div>
-
-        <!-- Backend Technologies -->
-        <div class="tech-category">
-            <h3 class="tech-category-title">
-                <i class="fas fa-server"></i> Backend
-            </h3>
-            <div class="skills-grid">
-                <div *ngFor="let tech of techStack.backend" class="skill-tag">
-                    <i class="{{ tech.icon }}"></i> {{ tech.name }}
-                </div>
-            </div>
-        </div>
-
-        <!-- Databases -->
-        <div class="tech-category">
-            <h3 class="tech-category-title">
-                <i class="fas fa-database"></i> Databases
-            </h3>
-            <div class="skills-grid">
-                <div *ngFor="let tech of techStack.databases" class="skill-tag">
-                    <i class="{{ tech.icon }}"></i> {{ tech.name }}
-                </div>
-            </div>
-        </div>
-
-        <!-- Tools & Platforms -->
-        <div class="tech-category">
-            <h3 class="tech-category-title">
-                <i class="fas fa-tools"></i> Tools & Platforms
-            </h3>
-            <div class="skills-grid">
-                <div *ngFor="let tech of techStack.tools" class="skill-tag">
-                    <i class="{{ tech.icon }}"></i> {{ tech.name }}
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Engineering Principles Section -->
     <section class="trust-section container">
         <div class="section-header">
@@ -360,38 +320,70 @@
         </div>
     </section>
 
-    <!-- Recommendations Section -->
-    <section class="testimonials-section container">
-        <div class="section-header">
-            <h2>Recommendations</h2>
-            <p>Feedback from senior architects and engineering leads I've collaborated with.</p>
-        </div>
+    <!-- Detailed Components for Project Interactions -->
+    <app-all-projects *ngIf="showAllProjects" [projects]="projectData" (close)="closeAllProjects()"
+        (selectProject)="openProjectDetail($event)">
+    </app-all-projects>
 
-        <div class="testimonials-grid">
-            <div *ngFor="let testimonial of testimonials" class="testimonial-card glass">
-                <div class="testimonial-header">
-                    <img [src]="testimonial.image" [alt]="testimonial.name" class="testimonial-avatar">
-                    <div class="testimonial-info">
-                        <h4>{{ testimonial.name }}</h4>
-                        <p class="testimonial-role">{{ testimonial.role }}</p>
-                        <p class="testimonial-company">{{ testimonial.company }}</p>
+    <app-project-details *ngIf="selectedProject" [project]="selectedProject" (close)="closeProjectDetail()">
+    </app-project-details>
+
+    <!-- Education & Certifications Grouped (Bottom Strategy) -->
+    <section class="academic-section container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12">
+                <div class="section-header">
+                    <h2>Education</h2>
+                    <p>Foundation in Computer Science and Application.</p>
+                </div>
+                <div class="education-grid">
+                    <div *ngFor="let edu of educationData" class="edu-card-horizontal glass">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="edu-info">
+                            <h4>{{ edu.degree }}</h4>
+                            <span class="edu-inst">{{ edu.institution }}</span>
+                            <div class="edu-meta">
+                                <span class="edu-date">{{ edu.duration }}</span>
+                                <span class="edu-separator">|</span>
+                                <span class="edu-score" *ngIf="edu.cgpa">{{ edu.cgpa }}</span>
+                                <span class="edu-score" *ngIf="edu.percentage">{{ edu.percentage }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p class="testimonial-text">"{{ testimonial.text }}"</p>
-                <a [href]="testimonial.linkedin" target="_blank" class="linkedin-link">
-                    <i class="fab fa-linkedin"></i> View on LinkedIn
-                </a>
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <div class="section-header">
+                    <h2>Certifications</h2>
+                    <p>Continuous learning and achievements.</p>
+                </div>
+                <div class="cert-list">
+                    <div class="cert-item glass">
+                        <i class="fas fa-certificate cert-icon"></i>
+                        <div>
+                            <h4>Advanced Diploma in Computer Application</h4>
+                            <span class="cert-date">Feb 2019</span>
+                        </div>
+                    </div>
+                    <div class="cert-item glass">
+                        <i class="fas fa-medal cert-icon"></i>
+                        <div>
+                            <h4>Academic Excellence Certificate</h4>
+                            <span class="cert-date">Jan 2023</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Articles Section -->
+    <!-- Articles Section (Final Flair) -->
     <section class="articles-section container" id="notes">
         <div class="section-header">
-            <h2>Notes</h2>
-            <p>My thoughts on technology.</p>
+            <h2>Technical Notes & Articles</h2>
+            <p>Sharing knowledge through technical writing and research.</p>
         </div>
         <div class="project-scroll-container">
             <!-- Reuse project scroll container style for full width breakout -->
