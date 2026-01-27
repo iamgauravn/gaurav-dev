@@ -53,6 +53,17 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  certifications = [
+    {
+      title: 'Advanced Diploma in Computer Application',
+      date: 'Feb 2019'
+    },
+    {
+      title: 'Academic Excellence Certificate',
+      date: 'Jan 2023'
+    }
+  ];
+
   projectData = [
     {
       name: 'Technician Platform',
@@ -542,6 +553,8 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
 
   projectsPart1: any[] = [];
   projectsPart2: any[] = [];
+  industrialProjects: any[] = [];
+  personalProjects: any[] = [];
   articlesPart1: any[] = [];
   articlesPart2: any[] = [];
 
@@ -550,7 +563,11 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    // Split projects into two rows for the marquee effect
+    // Categorize projects for separate sections
+    this.industrialProjects = this.projectData.filter(p => p.type === 'INDUSTRIAL');
+    this.personalProjects = this.projectData.filter(p => p.type === 'PERSONAL' || p.type === 'HACKATHON');
+
+    // Split projects into two rows for the marquee effect (keep for high-level showcase if desired, or remove if focus shifts to sections)
     const midPointProject = Math.ceil(this.projectData.length / 2);
     this.projectsPart1 = this.projectData.slice(0, midPointProject);
     this.projectsPart2 = this.projectData.slice(midPointProject);
@@ -626,23 +643,23 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
         break
 
       case 3:
-        window.open('mailto:gaurav110dev@gmail.com', '_blank');
-        break
-
-      case 4:
         window.open("https://stackoverflow.com/users/23102941/gaurav-nandankar", '_blank');
         break
 
-      case 5:
+      case 4:
         window.open("https://dev.to/gaurav-nandankar", '_blank');
         break
 
+      case 5:
+        window.open("https://medium.com/@gaurav110dev", '_blank');
+        break
+
       case 6:
-        window.open("https://dribbble.com/gaurav_dev", '_blank');
+        window.open("https://drive.google.com/drive/folders/1F3NhdjbnylDbOKUrBrxb_UNpIdwmrBnu?usp=sharing", '_blank');
         break
 
       case 7:
-        window.open("https://drive.google.com/drive/folders/1F3NhdjbnylDbOKUrBrxb_UNpIdwmrBnu?usp=sharing", '_blank');
+        window.open('mailto:gaurav110dev@gmail.com', '_blank');
         break
 
     }
